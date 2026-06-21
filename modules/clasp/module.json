@@ -1,0 +1,48 @@
+{
+  "name": "clasp",
+  "top_module": "clasp",
+  "description": "CLASP: Contested Lock with Atomic Set Protocol \u2014 8-slot hardware mutex with atomic test-and-set",
+  "resources": {
+    "luts": 43,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000-0x01C",
+      "name": "ACQUIRE[0..7]",
+      "access": "r",
+      "desc": "atomic test-and-set, returns prior value"
+    },
+    {
+      "offset": "0x020-0x03C",
+      "name": "RELEASE[0..7]",
+      "access": "w",
+      "desc": "clear the slot (any data)"
+    },
+    {
+      "offset": "0x040",
+      "name": "STATE",
+      "access": "r",
+      "desc": "current 8-bit state of all slots"
+    },
+    {
+      "offset": "0x044",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = clear all"
+    },
+    {
+      "offset": "0x048",
+      "name": "OWNERS",
+      "access": "r",
+      "desc": "same as STATE (alias)"
+    }
+  ]
+}

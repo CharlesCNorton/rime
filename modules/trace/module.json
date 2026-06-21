@@ -1,0 +1,54 @@
+{
+  "name": "trace",
+  "version": "0.1.0",
+  "description": "TRACE: on-silicon bus logic analyzer capturing 8 snoop transactions with timestamps.",
+  "resources": {
+    "luts": 560,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset",
+      "snoop"
+    ],
+    "provides": [
+      "trace"
+    ]
+  },
+  "top_module": "trace",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = arm (reset + capture), bit 1 = stop"
+    },
+    {
+      "offset": "0x004",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "entries captured (0..8)"
+    },
+    {
+      "offset": "0x008",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = capturing, bit 1 = full"
+    },
+    {
+      "offset": "0x010",
+      "name": "ADDR[k]",
+      "access": "r",
+      "desc": "snoop_addr of entry k, at 0x010 + 8*k (k=0..7)"
+    },
+    {
+      "offset": "0x014",
+      "name": "META[k]",
+      "access": "r",
+      "desc": "{timestamp[27:0], wstrb[3:0]} of entry k, at 0x014 + 8*k"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "cell",
+  "top_module": "cell_mod",
+  "description": "CELL: Configurable Elementary Local Logic automaton \u2014 64-cell 1D cellular automaton with Wolfram rule byte",
+  "resources": {
+    "luts": 205,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "STATE_LO",
+      "access": "rw",
+      "desc": "cells [31:0]"
+    },
+    {
+      "offset": "0x004",
+      "name": "STATE_HI",
+      "access": "rw",
+      "desc": "cells [63:32]"
+    },
+    {
+      "offset": "0x008",
+      "name": "RULE",
+      "access": "rw",
+      "desc": "8-bit Wolfram rule number"
+    },
+    {
+      "offset": "0x00C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = step one generation, bit 1 = reset"
+    },
+    {
+      "offset": "0x010",
+      "name": "GEN",
+      "access": "r",
+      "desc": "generation counter"
+    },
+    {
+      "offset": "0x014",
+      "name": "ALIVE",
+      "access": "r",
+      "desc": "popcount of living cells"
+    }
+  ]
+}

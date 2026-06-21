@@ -1,0 +1,48 @@
+{
+  "name": "seed",
+  "top_module": "seed",
+  "description": "SEED: Secure Entropy-Enhanced Derivation \u2014 monotonic counter + hash mixing for unique nonces",
+  "resources": {
+    "luts": 157,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "SEED_VAL",
+      "access": "w",
+      "desc": "32-bit entropy seed"
+    },
+    {
+      "offset": "0x004",
+      "name": "NONCE",
+      "access": "r",
+      "desc": "last generated nonce"
+    },
+    {
+      "offset": "0x008",
+      "name": "COUNTER",
+      "access": "r",
+      "desc": "current counter value (pre-increment)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = generate, bit 1 = reset counter"
+    },
+    {
+      "offset": "0x010",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = nonce valid (at least one generated)"
+    }
+  ]
+}

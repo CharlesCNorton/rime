@@ -1,0 +1,66 @@
+{
+  "name": "orbit",
+  "top_module": "orbit",
+  "description": "Optimized Rotation and Basic Iteration Toolkit \u2014 20-iteration CORDIC for sin/cos/atan/magnitude",
+  "resources": {
+    "luts": 996,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "ANGLE",
+      "access": "w",
+      "desc": "input angle (rotation mode), 1.15.16 fixed-point radians"
+    },
+    {
+      "offset": "0x004",
+      "name": "INPUT_X",
+      "access": "w",
+      "desc": "X input (vectoring mode)"
+    },
+    {
+      "offset": "0x008",
+      "name": "INPUT_Y",
+      "access": "w",
+      "desc": "Y input (vectoring mode)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = start, bit 1 = mode (0=rotation, 1=vectoring)"
+    },
+    {
+      "offset": "0x010",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done"
+    },
+    {
+      "offset": "0x014",
+      "name": "COS_MAG",
+      "access": "r",
+      "desc": "X result (cos in rotation, magnitude in vectoring)"
+    },
+    {
+      "offset": "0x018",
+      "name": "SIN_PHS",
+      "access": "r",
+      "desc": "Y result (sin in rotation, phase in vectoring)"
+    },
+    {
+      "offset": "0x01C",
+      "name": "RESIDUAL",
+      "access": "r",
+      "desc": "Z residual"
+    }
+  ]
+}

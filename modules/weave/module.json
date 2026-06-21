@@ -1,0 +1,59 @@
+{
+  "name": "weave",
+  "version": "0.1.0",
+  "description": "WEAVE: bit-serial arithmetic unit. Trades time for area.",
+  "resources": {
+    "luts": 721,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "serial_alu"
+    ]
+  },
+  "top_module": "weave",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "OP_A",
+      "access": "w",
+      "desc": "32-bit operand A"
+    },
+    {
+      "offset": "0x004",
+      "name": "OP_B",
+      "access": "w",
+      "desc": "32-bit operand B"
+    },
+    {
+      "offset": "0x008",
+      "name": "COMMAND",
+      "access": "w",
+      "desc": "0=add, 1=sub, 2=mul, 3=and, 4=or, 5=xor"
+    },
+    {
+      "offset": "0x00C",
+      "name": "RESULT",
+      "access": "r",
+      "desc": "32-bit result (valid when done)"
+    },
+    {
+      "offset": "0x010",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done, bit 1 = busy"
+    },
+    {
+      "offset": "0x014",
+      "name": "CYCLES",
+      "access": "r",
+      "desc": "cycles taken for last operation"
+    }
+  ]
+}

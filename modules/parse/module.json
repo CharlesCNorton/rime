@@ -1,0 +1,53 @@
+{
+  "name": "parse",
+  "version": "0.1.0",
+  "description": "PARSE: Pattern Automaton for Realtime Stream Evaluation. Hardware NFA regex engine.",
+  "resources": {
+    "luts": 190,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "nfa_matcher"
+    ]
+  },
+  "top_module": "parse",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "INPUT",
+      "access": "w",
+      "desc": "feed one byte to the NFA"
+    },
+    {
+      "offset": "0x004",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = any accept state active, bits [8:1] = state mask"
+    },
+    {
+      "offset": "0x008",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset NFA state"
+    },
+    {
+      "offset": "0x00C",
+      "name": "MATCHES",
+      "access": "r",
+      "desc": "total accept-state hits since last reset"
+    },
+    {
+      "offset": "0x100+N*4",
+      "name": "STATE_CFG[N]",
+      "access": "w",
+      "desc": "configure state N (0-7):"
+    }
+  ]
+}

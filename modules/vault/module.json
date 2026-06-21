@@ -1,0 +1,53 @@
+{
+  "name": "vault",
+  "version": "0.1.0",
+  "description": "VAULT: AES-128 single-block encrypt/decrypt.",
+  "resources": {
+    "luts": 4460,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "aes128"
+    ]
+  },
+  "top_module": "vault",
+  "registers": [
+    {
+      "offset": "0x000-0x00C",
+      "name": "PLAIN[0..3]",
+      "access": "w",
+      "desc": "128-bit plaintext as 4x32-bit words"
+    },
+    {
+      "offset": "0x010-0x01C",
+      "name": "KEY[0..3]",
+      "access": "w",
+      "desc": "128-bit key as 4x32-bit words"
+    },
+    {
+      "offset": "0x020",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = encrypt"
+    },
+    {
+      "offset": "0x024",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done"
+    },
+    {
+      "offset": "0x028-0x034",
+      "name": "CIPHER[0..3]",
+      "access": "r",
+      "desc": "128-bit ciphertext"
+    }
+  ]
+}

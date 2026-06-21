@@ -1,0 +1,35 @@
+{
+  "name": "rime-ii",
+  "version": "0.1.0",
+  "description": "RIME-II: RV32IMFC soft CPU with fused integer/FP datapath, interrupts, Zbb, compressed instructions",
+  "resources": {
+    "luts": 16039,
+    "brams": 7,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "clock",
+      "reset",
+      "irq"
+    ],
+    "provides": [
+      "cpu",
+      "rv32imfc"
+    ]
+  },
+  "top_module": "rime_ii_core",
+  "extensions": [
+    "M",
+    "F",
+    "C",
+    "Zbb"
+  ],
+  "notes": {
+    "fused_path": "No separate FPU \u2014 integer ALU adder/shifter/comparator are time-multiplexed for FP operations",
+    "dsp_usage": "2x MULT18X18D shared between FMUL.S, integer MUL, and Newton-Raphson FDIV.S/FSQRT.S",
+    "lzc_shared": "24-bit leading zero counter shared between FP normalization and Zbb CLZ instruction",
+    "nr_division": "FDIV.S via Newton-Raphson: table lookup + 4 iterations (~45 cycles)",
+    "nr_sqrt": "FSQRT.S via Newton-Raphson: table lookup + 4 iterations (~65 cycles)"
+  }
+}

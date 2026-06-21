@@ -1,0 +1,3 @@
+{
+  "nextpnr_flags": ["--timing-allow-fail"]
+}

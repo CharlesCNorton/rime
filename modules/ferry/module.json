@@ -1,0 +1,60 @@
+{
+  "name": "ferry",
+  "top_module": "ferry",
+  "description": "FERRY: Fast External Register Relay Engine \u2014 8-word internal scratchpad copy with src/dst/count programming",
+  "resources": {
+    "luts": 2135,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000-0x03C",
+      "name": "SCRATCH[0..15]",
+      "access": "rw",
+      "desc": "16-word scratchpad"
+    },
+    {
+      "offset": "0x040",
+      "name": "SRC",
+      "access": "w",
+      "desc": "source index (0..15)"
+    },
+    {
+      "offset": "0x044",
+      "name": "DST",
+      "access": "w",
+      "desc": "destination index (0..15)"
+    },
+    {
+      "offset": "0x048",
+      "name": "COUNT",
+      "access": "w",
+      "desc": "number of words to copy"
+    },
+    {
+      "offset": "0x04C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = start, bit 1 = reset"
+    },
+    {
+      "offset": "0x050",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = busy, bit 1 = done"
+    },
+    {
+      "offset": "0x054",
+      "name": "TRANSFERS",
+      "access": "r",
+      "desc": "total transfers completed since reset"
+    }
+  ]
+}

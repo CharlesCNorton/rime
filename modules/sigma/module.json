@@ -1,0 +1,47 @@
+{
+  "name": "sigma",
+  "version": "0.1.0",
+  "description": "SIGMA: streaming checksum accumulator (Fletcher-16).",
+  "resources": {
+    "luts": 100,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "checksum"
+    ]
+  },
+  "top_module": "sigma",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "DATA",
+      "access": "w",
+      "desc": "feed one byte"
+    },
+    {
+      "offset": "0x004",
+      "name": "CKSUM",
+      "access": "r",
+      "desc": "Fletcher-16 checksum (sum2<<8 | sum1)"
+    },
+    {
+      "offset": "0x008",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset"
+    },
+    {
+      "offset": "0x00C",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "bytes fed"
+    }
+  ]
+}

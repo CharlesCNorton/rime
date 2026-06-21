@@ -1,0 +1,66 @@
+{
+  "name": "logos",
+  "top_module": "logos",
+  "description": "Logarithmic Operations and General Optimization System \u2014 log-domain multiply/divide/sqrt",
+  "resources": {
+    "luts": 58,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "INPUT_A",
+      "access": "w",
+      "desc": "16-bit linear value"
+    },
+    {
+      "offset": "0x004",
+      "name": "INPUT_B",
+      "access": "w",
+      "desc": "16-bit linear value"
+    },
+    {
+      "offset": "0x008",
+      "name": "LOG_A",
+      "access": "r",
+      "desc": "16-bit log2(A) in 8.8 FP"
+    },
+    {
+      "offset": "0x00C",
+      "name": "LOG_B",
+      "access": "r",
+      "desc": "16-bit log2(B) in 8.8 FP"
+    },
+    {
+      "offset": "0x010",
+      "name": "MULTIPLY",
+      "access": "r",
+      "desc": "antilog(logA + logB) \u2248 A * B (16-bit)"
+    },
+    {
+      "offset": "0x014",
+      "name": "DIVIDE",
+      "access": "r",
+      "desc": "antilog(logA - logB) \u2248 A / B (16-bit)"
+    },
+    {
+      "offset": "0x018",
+      "name": "SQRT_A",
+      "access": "r",
+      "desc": "antilog(logA >> 1) \u2248 sqrt(A) (16-bit)"
+    },
+    {
+      "offset": "0x01C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset"
+    }
+  ]
+}

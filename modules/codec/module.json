@@ -1,0 +1,90 @@
+{
+  "name": "codec",
+  "top_module": "codec",
+  "description": "CODEC: Compact Ordered Data Encoding/Decoding Coprocessor \u2014 base64 encode and decode",
+  "resources": {
+    "luts": 389,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "IN0",
+      "access": "w",
+      "desc": "input byte/char 0"
+    },
+    {
+      "offset": "0x004",
+      "name": "IN1",
+      "access": "w",
+      "desc": "input byte/char 1"
+    },
+    {
+      "offset": "0x008",
+      "name": "IN2",
+      "access": "w",
+      "desc": "input byte/char 2"
+    },
+    {
+      "offset": "0x00C",
+      "name": "IN3",
+      "access": "w",
+      "desc": "input char 3 (decode only)"
+    },
+    {
+      "offset": "0x010",
+      "name": "ENC0",
+      "access": "r",
+      "desc": "encoded char 0 (ASCII)"
+    },
+    {
+      "offset": "0x014",
+      "name": "ENC1",
+      "access": "r",
+      "desc": "encoded char 1"
+    },
+    {
+      "offset": "0x018",
+      "name": "ENC2",
+      "access": "r",
+      "desc": "encoded char 2"
+    },
+    {
+      "offset": "0x01C",
+      "name": "ENC3",
+      "access": "r",
+      "desc": "encoded char 3"
+    },
+    {
+      "offset": "0x020",
+      "name": "DEC0",
+      "access": "r",
+      "desc": "decoded byte 0"
+    },
+    {
+      "offset": "0x024",
+      "name": "DEC1",
+      "access": "r",
+      "desc": "decoded byte 1"
+    },
+    {
+      "offset": "0x028",
+      "name": "DEC2",
+      "access": "r",
+      "desc": "decoded byte 2"
+    },
+    {
+      "offset": "0x02C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset"
+    }
+  ]
+}

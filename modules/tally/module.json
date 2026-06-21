@@ -1,0 +1,66 @@
+{
+  "name": "tally",
+  "top_module": "tally",
+  "description": "TALLY: Triggered Accumulating Linear Logic sYnthesizer \u2014 4-channel 16x16 multiply-accumulate",
+  "resources": {
+    "luts": 590,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "OP_A",
+      "access": "w",
+      "desc": "bits [15:0] = multiplicand, bits [17:16] = channel select"
+    },
+    {
+      "offset": "0x004",
+      "name": "OP_B",
+      "access": "w",
+      "desc": "bits [15:0] = multiplier; triggers MAC on selected channel"
+    },
+    {
+      "offset": "0x008",
+      "name": "ACC0",
+      "access": "r",
+      "desc": "channel 0 accumulator"
+    },
+    {
+      "offset": "0x00C",
+      "name": "ACC1",
+      "access": "r",
+      "desc": "channel 1 accumulator"
+    },
+    {
+      "offset": "0x010",
+      "name": "ACC2",
+      "access": "r",
+      "desc": "channel 2 accumulator"
+    },
+    {
+      "offset": "0x014",
+      "name": "ACC3",
+      "access": "r",
+      "desc": "channel 3 accumulator"
+    },
+    {
+      "offset": "0x018",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done (all channels idle)"
+    },
+    {
+      "offset": "0x01C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset all channels"
+    }
+  ]
+}

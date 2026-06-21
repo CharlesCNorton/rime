@@ -1,0 +1,54 @@
+{
+  "name": "divide",
+  "top_module": "divide",
+  "description": "DIVIDE: Direct Integer Variable-length Iterative Division Engine \u2014 32-bit unsigned/signed divider with quotient and remainder",
+  "resources": {
+    "luts": 453,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "DIVIDEND",
+      "access": "w",
+      "desc": "32-bit dividend"
+    },
+    {
+      "offset": "0x004",
+      "name": "DIVISOR",
+      "access": "w",
+      "desc": "32-bit divisor; triggers computation"
+    },
+    {
+      "offset": "0x008",
+      "name": "QUOTIENT",
+      "access": "r",
+      "desc": "32-bit quotient (valid when done)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "REMAIN",
+      "access": "r",
+      "desc": "32-bit remainder (valid when done)"
+    },
+    {
+      "offset": "0x010",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done, bit 1 = div-by-zero"
+    },
+    {
+      "offset": "0x014",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset"
+    }
+  ]
+}

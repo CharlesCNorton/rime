@@ -1,0 +1,48 @@
+{
+  "name": "flip",
+  "top_module": "flip",
+  "description": "Fast Logical Interstitial Permutator \u2014 8x8 and 32x32 bit-matrix transpose",
+  "resources": {
+    "luts": 1111,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000-0x01C",
+      "name": "ROW8[0..7]",
+      "access": "w",
+      "desc": "8x8 input rows, bits [7:0]"
+    },
+    {
+      "offset": "0x020-0x03C",
+      "name": "COL8[0..7]",
+      "access": "r",
+      "desc": "8x8 transposed output"
+    },
+    {
+      "offset": "0x040",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = 32x32 loaded (all 32 rows written)"
+    },
+    {
+      "offset": "0x100-0x17C",
+      "name": "ROW32[0..31]",
+      "access": "w",
+      "desc": "32x32 input rows"
+    },
+    {
+      "offset": "0x200-0x27C",
+      "name": "COL32[0..31]",
+      "access": "r",
+      "desc": "32x32 transposed output"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "oracle",
+  "version": "0.1.0",
+  "description": "ORACLE: 256-entry lookup table with linear interpolation.",
+  "resources": {
+    "luts": 4125,
+    "brams": 1,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "lut_interp"
+    ]
+  },
+  "top_module": "oracle",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "QUERY",
+      "access": "w",
+      "desc": "16-bit input (8.8 fixed-point), result available immediately"
+    },
+    {
+      "offset": "0x004",
+      "name": "RESULT",
+      "access": "r",
+      "desc": "interpolated 16-bit output"
+    },
+    {
+      "offset": "0x008",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = load mode (table writes go to entries)"
+    },
+    {
+      "offset": "0x400-0x7FF",
+      "name": "TABLE[0..255]",
+      "access": "w",
+      "desc": "16-bit entries"
+    }
+  ]
+}

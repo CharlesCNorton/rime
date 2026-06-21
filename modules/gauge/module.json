@@ -1,0 +1,62 @@
+{
+  "name": "gauge",
+  "top_module": "gauge",
+  "description": "GAUGE: General Aggregated Utilization and Granular Estimator \u2014 bus bandwidth counter via snoop",
+  "resources": {
+    "luts": 504,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": [
+      "snoop"
+    ]
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "GATE",
+      "access": "w",
+      "desc": "gate interval in sys_clk cycles"
+    },
+    {
+      "offset": "0x004",
+      "name": "TOTAL",
+      "access": "r",
+      "desc": "total transactions in last completed gate"
+    },
+    {
+      "offset": "0x008",
+      "name": "READS",
+      "access": "r",
+      "desc": "read transactions in last completed gate"
+    },
+    {
+      "offset": "0x00C",
+      "name": "WRITES",
+      "access": "r",
+      "desc": "write transactions in last completed gate"
+    },
+    {
+      "offset": "0x010",
+      "name": "CYCLES",
+      "access": "r",
+      "desc": "gate duration in cycles (= GATE value)"
+    },
+    {
+      "offset": "0x014",
+      "name": "RUNNING",
+      "access": "r",
+      "desc": "current in-progress total transaction count"
+    },
+    {
+      "offset": "0x018",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = start gate, bit 1 = reset"
+    }
+  ]
+}

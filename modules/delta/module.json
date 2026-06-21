@@ -1,0 +1,65 @@
+{
+  "name": "delta",
+  "version": "0.1.0",
+  "description": "DELTA: byte-stream XOR differencing engine.",
+  "resources": {
+    "luts": 191,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "diff_engine"
+    ]
+  },
+  "top_module": "delta",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "OLD_BYTE",
+      "access": "w",
+      "desc": "feed one byte from old stream"
+    },
+    {
+      "offset": "0x004",
+      "name": "NEW_BYTE",
+      "access": "w",
+      "desc": "feed one byte from new stream, triggers diff"
+    },
+    {
+      "offset": "0x008",
+      "name": "DIFF",
+      "access": "r",
+      "desc": "XOR of last old ^ new byte"
+    },
+    {
+      "offset": "0x00C",
+      "name": "CHANGED",
+      "access": "r",
+      "desc": "total changed bytes (where XOR != 0)"
+    },
+    {
+      "offset": "0x010",
+      "name": "TOTAL",
+      "access": "r",
+      "desc": "total bytes compared"
+    },
+    {
+      "offset": "0x014",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset counters"
+    },
+    {
+      "offset": "0x018",
+      "name": "SAME",
+      "access": "r",
+      "desc": "total unchanged bytes (XOR == 0)"
+    }
+  ]
+}

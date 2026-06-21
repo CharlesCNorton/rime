@@ -1,0 +1,41 @@
+{
+  "name": "moss",
+  "version": "0.1.0",
+  "description": "MOSS: Massively Orchestrated Spatial Stepper. 8x8 cellular automaton.",
+  "resources": {
+    "luts": 318,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "cellular_automata"
+    ]
+  },
+  "top_module": "moss",
+  "registers": [
+    {
+      "offset": "0x020",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = step one generation, bit 1 = clear"
+    },
+    {
+      "offset": "0x024",
+      "name": "GEN",
+      "access": "r",
+      "desc": "generation counter"
+    },
+    {
+      "offset": "0x028",
+      "name": "ALIVE",
+      "access": "r",
+      "desc": "number of live cells"
+    }
+  ]
+}

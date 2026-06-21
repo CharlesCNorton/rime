@@ -1,0 +1,56 @@
+{
+  "name": "echo",
+  "top_module": "echo",
+  "description": "Event Capture and Hardware Observer \u2014 cycle-stamped bus transaction logger via snoop",
+  "resources": {
+    "luts": 130,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": [
+      "snoop"
+    ]
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = enable, bit 1 = clear"
+    },
+    {
+      "offset": "0x004",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = enabled, bit 1 = wrapped"
+    },
+    {
+      "offset": "0x008",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "events captured (0-16)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "CYCLE",
+      "access": "r",
+      "desc": "current 32-bit cycle counter"
+    },
+    {
+      "offset": "0x010",
+      "name": "WR_PTR",
+      "access": "r",
+      "desc": "current write index"
+    },
+    {
+      "offset": "0x040-0x07C",
+      "name": "LOG[0..15]",
+      "access": "r",
+      "desc": "captured events"
+    }
+  ]
+}

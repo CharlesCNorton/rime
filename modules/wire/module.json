@@ -1,0 +1,60 @@
+{
+  "name": "wire",
+  "top_module": "wire_mod",
+  "description": "WIRE: Wired Interconnect for Register Exchange \u2014 software-driven I2C master FSM with internal loopback (no external pins; compositor register bus only)",
+  "resources": {
+    "luts": 69,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "ADDR",
+      "access": "w",
+      "desc": "7-bit slave address, bit 7 = R/W direction"
+    },
+    {
+      "offset": "0x004",
+      "name": "TX_DATA",
+      "access": "w",
+      "desc": "data byte to send"
+    },
+    {
+      "offset": "0x008",
+      "name": "RX_DATA",
+      "access": "r",
+      "desc": "data byte received"
+    },
+    {
+      "offset": "0x00C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = start tx, bit 1 = start rx, bit 2 = reset, bit 3 = stop"
+    },
+    {
+      "offset": "0x010",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = busy, bit 1 = done, bit 2 = nack"
+    },
+    {
+      "offset": "0x014",
+      "name": "LOOPBACK",
+      "access": "w",
+      "desc": "value the simulated slave returns on read"
+    },
+    {
+      "offset": "0x018",
+      "name": "STATE",
+      "access": "r",
+      "desc": "current FSM state (debug)"
+    }
+  ]
+}

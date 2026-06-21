@@ -1,0 +1,102 @@
+{
+  "name": "lace",
+  "top_module": "lace",
+  "description": "Linear Address from Coordinate Encoding \u2014 Z-order bit interleave/deinterleave for 2D and 3D",
+  "resources": {
+    "luts": 2,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "X2D",
+      "access": "w",
+      "desc": "16-bit X for 2D encode"
+    },
+    {
+      "offset": "0x004",
+      "name": "Y2D",
+      "access": "w",
+      "desc": "16-bit Y for 2D encode (triggers latch)"
+    },
+    {
+      "offset": "0x008",
+      "name": "Z2D_OUT",
+      "access": "r",
+      "desc": "32-bit Morton code from (X2D, Y2D)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "Z2D_IN",
+      "access": "w",
+      "desc": "32-bit Morton code for 2D decode"
+    },
+    {
+      "offset": "0x010",
+      "name": "X2D_OUT",
+      "access": "r",
+      "desc": "16-bit deinterleaved X"
+    },
+    {
+      "offset": "0x014",
+      "name": "Y2D_OUT",
+      "access": "r",
+      "desc": "16-bit deinterleaved Y"
+    },
+    {
+      "offset": "0x018",
+      "name": "X3D",
+      "access": "w",
+      "desc": "10-bit X for 3D encode"
+    },
+    {
+      "offset": "0x01C",
+      "name": "Y3D",
+      "access": "w",
+      "desc": "10-bit Y for 3D encode"
+    },
+    {
+      "offset": "0x020",
+      "name": "Z3D",
+      "access": "w",
+      "desc": "10-bit Z for 3D encode (triggers latch)"
+    },
+    {
+      "offset": "0x024",
+      "name": "M3D_OUT",
+      "access": "r",
+      "desc": "30-bit 3D Morton code"
+    },
+    {
+      "offset": "0x028",
+      "name": "M3D_IN",
+      "access": "w",
+      "desc": "30-bit 3D Morton code for decode"
+    },
+    {
+      "offset": "0x02C",
+      "name": "X3D_OUT",
+      "access": "r",
+      "desc": "10-bit deinterleaved X"
+    },
+    {
+      "offset": "0x030",
+      "name": "Y3D_OUT",
+      "access": "r",
+      "desc": "10-bit deinterleaved Y"
+    },
+    {
+      "offset": "0x034",
+      "name": "Z3D_OUT",
+      "access": "r",
+      "desc": "10-bit deinterleaved Z"
+    }
+  ]
+}

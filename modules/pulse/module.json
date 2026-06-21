@@ -1,0 +1,48 @@
+{
+  "name": "pulse",
+  "top_module": "pulse",
+  "description": "PULSE: Programmable Unified Logic for Signal Emission \u2014 4-channel 16-bit PWM generator",
+  "resources": {
+    "luts": 573,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "CH0_PERIOD",
+      "access": "rw",
+      "desc": "16-bit period"
+    },
+    {
+      "offset": "0x004",
+      "name": "CH0_DUTY",
+      "access": "rw",
+      "desc": "16-bit duty"
+    },
+    {
+      "offset": "0x020",
+      "name": "OUTPUT",
+      "access": "r",
+      "desc": "bits [3:0] = current PWM output per channel"
+    },
+    {
+      "offset": "0x024",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = enable, bit 1 = reset all counters"
+    },
+    {
+      "offset": "0x028",
+      "name": "COUNTER0",
+      "access": "r",
+      "desc": "current counter value of channel 0 (debug)"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "sieve",
+  "top_module": "sieve",
+  "description": "SIEVE: Selective Indexed Extract and Variable Embed \u2014 configurable bit-field extract and deposit",
+  "resources": {
+    "luts": 831,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "SOURCE",
+      "access": "w",
+      "desc": "32-bit source value"
+    },
+    {
+      "offset": "0x004",
+      "name": "CONFIG",
+      "access": "w",
+      "desc": "bits [4:0] = position, bits [12:8] = width (1-32)"
+    },
+    {
+      "offset": "0x008",
+      "name": "EXTRACT",
+      "access": "r",
+      "desc": "extracted field: (source >> pos) & ((1 << width) - 1)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "TARGET",
+      "access": "w",
+      "desc": "32-bit target value for deposit"
+    },
+    {
+      "offset": "0x010",
+      "name": "FIELD",
+      "access": "w",
+      "desc": "field value to deposit"
+    },
+    {
+      "offset": "0x014",
+      "name": "DEPOSIT",
+      "access": "r",
+      "desc": "target with field inserted: (target & ~mask) | ((field << pos) & mask)"
+    },
+    {
+      "offset": "0x018",
+      "name": "MASK",
+      "access": "r",
+      "desc": "computed mask for current config"
+    },
+    {
+      "offset": "0x01C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset"
+    }
+  ]
+}

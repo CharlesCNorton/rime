@@ -1,0 +1,53 @@
+{
+  "name": "mark",
+  "version": "0.1.0",
+  "description": "MARK: Manufacturing-Artifact Random Key. Silicon PUF for unique board identity.",
+  "resources": {
+    "luts": 144,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "puf_key"
+    ]
+  },
+  "top_module": "mark",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "KEY_LO",
+      "access": "r",
+      "desc": "lower 32 bits of PUF response"
+    },
+    {
+      "offset": "0x004",
+      "name": "KEY_HI",
+      "access": "r",
+      "desc": "upper 32 bits of PUF response"
+    },
+    {
+      "offset": "0x008",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = trigger new measurement"
+    },
+    {
+      "offset": "0x00C",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = measurement done"
+    },
+    {
+      "offset": "0x010",
+      "name": "HAMMING",
+      "access": "r",
+      "desc": "hamming distance between last two measurements"
+    }
+  ]
+}

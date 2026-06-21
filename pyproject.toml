@@ -1,0 +1,94 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rime-ecp5"
+version = "0.1.2"
+description = "RIME: resident management environment for the Lattice ECP5 IcePi Zero, synthesized with nosis (no yosys)"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "CharlesCNorton", email = "machineelv@gmail.com" }]
+keywords = ["fpga", "ecp5", "lattice", "icepi", "nosis", "nextpnr", "bitstream", "jtag", "flash"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+    "Operating System :: OS Independent",
+]
+dependencies = ["pyserial>=3.5,<4", "nosis>=0.1"]
+
+[project.urls]
+Homepage = "https://github.com/CharlesCNorton/rime"
+Repository = "https://github.com/CharlesCNorton/rime"
+Issues = "https://github.com/CharlesCNorton/rime/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-timeout",
+    "pytest-cov",
+    "hypothesis",
+    "ruff",
+    "mypy",
+    "pre-commit",
+]
+
+[project.scripts]
+rime = "icepi_helper:main"
+rime-admin = "icepi_admin:main"
+
+[tool.setuptools]
+py-modules = ["icepi_helper", "icepi_admin"]
+
+[tool.setuptools.packages.find]
+include = ["icepi*"]
+
+[tool.setuptools.package-data]
+# The firmware/module/config source trees are copied into icepi/_bundled at
+# build time (see setup.py) so `rime build` works from an installed wheel.
+icepi = ["_bundled/**/*"]
+"*" = ["*.json"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 160
+# experiments/ are standalone whole-FPGA scratch images, out of scope (see AGENTS.md).
+extend-exclude = ["experiments"]
+
+[tool.ruff.lint]
+select = ["F", "E", "W"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["tests.*", "modules.*", "experiments.*", "scripts.*", "icepi_helper"]
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["icepi"]
+omit = ["tests/*", "modules/*", "experiments/*", "scripts/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__",
+    "raise NotImplementedError",
+]

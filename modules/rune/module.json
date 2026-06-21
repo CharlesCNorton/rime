@@ -1,0 +1,47 @@
+{
+  "name": "rune",
+  "version": "0.1.0",
+  "description": "RUNE: 8x8 bitmap font renderer for ASCII 32-126.",
+  "resources": {
+    "luts": 2791,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "font_rom"
+    ]
+  },
+  "top_module": "rune",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "CHAR",
+      "access": "w",
+      "desc": "ASCII code (32-126)"
+    },
+    {
+      "offset": "0x004",
+      "name": "ROW",
+      "access": "w",
+      "desc": "row index (0-7)"
+    },
+    {
+      "offset": "0x008",
+      "name": "GLYPH",
+      "access": "r",
+      "desc": "8-bit bitmap for selected char+row"
+    },
+    {
+      "offset": "0x00C",
+      "name": "PIXEL",
+      "access": "r",
+      "desc": "bit count (popcount) of current glyph row"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+[lint.per-file-ignores]
+"place_ember.py" = ["F821"]
+"gen_lpf.py" = ["F821"]
+"gen_lpf_constraints.py" = ["F821"]

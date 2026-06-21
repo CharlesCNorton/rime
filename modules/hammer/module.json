@@ -1,0 +1,54 @@
+{
+  "name": "hammer",
+  "top_module": "hammer",
+  "description": "Hardware Accelerated Matching and Measurement Engine Register \u2014 256-bit Hamming distance",
+  "resources": {
+    "luts": 535,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000-0x01C",
+      "name": "A[0..7]",
+      "access": "w",
+      "desc": "256-bit vector A"
+    },
+    {
+      "offset": "0x020-0x03C",
+      "name": "B[0..7]",
+      "access": "w",
+      "desc": "256-bit vector B"
+    },
+    {
+      "offset": "0x040",
+      "name": "DISTANCE",
+      "access": "r",
+      "desc": "9-bit Hamming distance (0-256)"
+    },
+    {
+      "offset": "0x044",
+      "name": "MATCH",
+      "access": "r",
+      "desc": "1 if distance == 0"
+    },
+    {
+      "offset": "0x048",
+      "name": "THRESHOLD",
+      "access": "w",
+      "desc": "fuzzy match threshold"
+    },
+    {
+      "offset": "0x04C",
+      "name": "FUZZY",
+      "access": "r",
+      "desc": "1 if distance <= threshold"
+    }
+  ]
+}

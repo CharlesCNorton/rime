@@ -1,0 +1,54 @@
+{
+  "name": "tempo",
+  "top_module": "tempo",
+  "description": "TEMPO: Timed Event Measurement and Period Observer \u2014 frequency and period counter",
+  "resources": {
+    "luts": 313,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "SIGNAL",
+      "access": "w",
+      "desc": "bit 0 = input signal (software-driven)"
+    },
+    {
+      "offset": "0x004",
+      "name": "GATE",
+      "access": "w",
+      "desc": "gate window in sys_clk cycles"
+    },
+    {
+      "offset": "0x008",
+      "name": "FREQ",
+      "access": "r",
+      "desc": "edge count during last completed gate window"
+    },
+    {
+      "offset": "0x00C",
+      "name": "PERIOD",
+      "access": "r",
+      "desc": "sys_clk cycles between last two rising edges"
+    },
+    {
+      "offset": "0x010",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = start gate, bit 1 = reset"
+    },
+    {
+      "offset": "0x014",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = gate active, bit 1 = freq valid, bit 2 = period valid"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+# Power calibration placement constraints for ECP5-25F (CABGA256)
+#
+# Die geometry: ~100 columns × 50 rows of TRELLIS_SLICE
+# Zone A: bottom-left     Zone B: bottom-right
+# Zone C: top-left        Zone D: top-right
+#
+# Sensors: center of each zone (S0-S3) + inter-zone midpoints (S4-S7)
+
+# --- Sensor ring oscillators (5-stage each) ---
+# S0: center of zone A (row 10, col 10)
+LOCATE COMP "gen_sensor[0].gen_inv[0].inv" SITE "R10C10D";
+LOCATE COMP "gen_sensor[0].gen_inv[1].inv" SITE "R10C11D";
+LOCATE COMP "gen_sensor[0].gen_inv[2].inv" SITE "R10C12D";
+LOCATE COMP "gen_sensor[0].gen_inv[3].inv" SITE "R10C13D";
+LOCATE COMP "gen_sensor[0].gen_inv[4].inv" SITE "R10C14D";
+
+# S1: center of zone B (row 10, col 85)
+LOCATE COMP "gen_sensor[1].gen_inv[0].inv" SITE "R10C85D";
+LOCATE COMP "gen_sensor[1].gen_inv[1].inv" SITE "R10C86D";
+LOCATE COMP "gen_sensor[1].gen_inv[2].inv" SITE "R10C87D";
+LOCATE COMP "gen_sensor[1].gen_inv[3].inv" SITE "R10C88D";
+LOCATE COMP "gen_sensor[1].gen_inv[4].inv" SITE "R10C89D";
+
+# S2: center of zone C (row 40, col 10)
+LOCATE COMP "gen_sensor[2].gen_inv[0].inv" SITE "R40C10D";
+LOCATE COMP "gen_sensor[2].gen_inv[1].inv" SITE "R40C11D";
+LOCATE COMP "gen_sensor[2].gen_inv[2].inv" SITE "R40C12D";
+LOCATE COMP "gen_sensor[2].gen_inv[3].inv" SITE "R40C13D";
+LOCATE COMP "gen_sensor[2].gen_inv[4].inv" SITE "R40C14D";
+
+# S3: center of zone D (row 40, col 85)
+LOCATE COMP "gen_sensor[3].gen_inv[0].inv" SITE "R40C85D";
+LOCATE COMP "gen_sensor[3].gen_inv[1].inv" SITE "R40C86D";
+LOCATE COMP "gen_sensor[3].gen_inv[2].inv" SITE "R40C87D";
+LOCATE COMP "gen_sensor[3].gen_inv[3].inv" SITE "R40C88D";
+LOCATE COMP "gen_sensor[3].gen_inv[4].inv" SITE "R40C89D";
+
+# S4: midpoint A-B (row 10, col 48) — bottom center
+LOCATE COMP "gen_sensor[4].gen_inv[0].inv" SITE "R10C48D";
+LOCATE COMP "gen_sensor[4].gen_inv[1].inv" SITE "R10C49D";
+LOCATE COMP "gen_sensor[4].gen_inv[2].inv" SITE "R10C50D";
+LOCATE COMP "gen_sensor[4].gen_inv[3].inv" SITE "R10C51D";
+LOCATE COMP "gen_sensor[4].gen_inv[4].inv" SITE "R10C52D";
+
+# S5: midpoint C-D (row 40, col 48) — top center
+LOCATE COMP "gen_sensor[5].gen_inv[0].inv" SITE "R40C48D";
+LOCATE COMP "gen_sensor[5].gen_inv[1].inv" SITE "R40C49D";
+LOCATE COMP "gen_sensor[5].gen_inv[2].inv" SITE "R40C50D";
+LOCATE COMP "gen_sensor[5].gen_inv[3].inv" SITE "R40C51D";
+LOCATE COMP "gen_sensor[5].gen_inv[4].inv" SITE "R40C52D";
+
+# S6: midpoint A-C (row 25, col 10) — left center
+LOCATE COMP "gen_sensor[6].gen_inv[0].inv" SITE "R25C10D";
+LOCATE COMP "gen_sensor[6].gen_inv[1].inv" SITE "R25C11D";
+LOCATE COMP "gen_sensor[6].gen_inv[2].inv" SITE "R25C12D";
+LOCATE COMP "gen_sensor[6].gen_inv[3].inv" SITE "R25C13D";
+LOCATE COMP "gen_sensor[6].gen_inv[4].inv" SITE "R25C14D";
+
+# S7: die center (row 25, col 48) — absolute center
+LOCATE COMP "gen_sensor[7].gen_inv[0].inv" SITE "R25C48D";
+LOCATE COMP "gen_sensor[7].gen_inv[1].inv" SITE "R25C49D";
+LOCATE COMP "gen_sensor[7].gen_inv[2].inv" SITE "R25C50D";
+LOCATE COMP "gen_sensor[7].gen_inv[3].inv" SITE "R25C51D";
+LOCATE COMP "gen_sensor[7].gen_inv[4].inv" SITE "R25C52D";

@@ -1,0 +1,65 @@
+{
+  "name": "sentry",
+  "version": "0.1.0",
+  "description": "SENTRY: memory protection unit with 4 configurable address ranges.",
+  "resources": {
+    "luts": 492,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "mpu"
+    ]
+  },
+  "top_module": "sentry",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "CHECK_ADDR",
+      "access": "w",
+      "desc": "address to check"
+    },
+    {
+      "offset": "0x004",
+      "name": "CHECK_MODE",
+      "access": "w",
+      "desc": "bit 0=read, bit 1=write. Triggers check."
+    },
+    {
+      "offset": "0x008",
+      "name": "RESULT",
+      "access": "r",
+      "desc": "bit 0=allowed, bit 1=trapped"
+    },
+    {
+      "offset": "0x00C",
+      "name": "TRAP_ADDR",
+      "access": "r",
+      "desc": "address of last trap"
+    },
+    {
+      "offset": "0x010",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0=enable, bit 1=clear trap"
+    },
+    {
+      "offset": "0x020+i*8",
+      "name": "REGION_BASE[i]",
+      "access": "w",
+      "desc": "region i start address (i=0..3)"
+    },
+    {
+      "offset": "0x024+i*8",
+      "name": "REGION_CFG[i]",
+      "access": "w",
+      "desc": "bits[15:0]=size, bit16=R, bit17=W, bit18=enable"
+    }
+  ]
+}

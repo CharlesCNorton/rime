@@ -1,0 +1,85 @@
+{
+  "name": "mortar",
+  "version": "0.1.0",
+  "description": "MORTAR: 2x2 signed 8-bit matrix multiply accelerator.",
+  "resources": {
+    "luts": 55,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "matmul"
+    ]
+  },
+  "top_module": "mortar",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "A00",
+      "access": "w",
+      "desc": "signed 8-bit"
+    },
+    {
+      "offset": "0x004",
+      "name": "A01",
+      "access": "w"
+    },
+    {
+      "offset": "0x008",
+      "name": "A10",
+      "access": "w"
+    },
+    {
+      "offset": "0x00C",
+      "name": "A11",
+      "access": "w"
+    },
+    {
+      "offset": "0x010",
+      "name": "B00",
+      "access": "w"
+    },
+    {
+      "offset": "0x014",
+      "name": "B01",
+      "access": "w"
+    },
+    {
+      "offset": "0x018",
+      "name": "B10",
+      "access": "w"
+    },
+    {
+      "offset": "0x01C",
+      "name": "B11",
+      "access": "w"
+    },
+    {
+      "offset": "0x020",
+      "name": "C00",
+      "access": "r",
+      "desc": "signed 16-bit result"
+    },
+    {
+      "offset": "0x024",
+      "name": "C01",
+      "access": "r"
+    },
+    {
+      "offset": "0x028",
+      "name": "C10",
+      "access": "r"
+    },
+    {
+      "offset": "0x02C",
+      "name": "C11",
+      "access": "r"
+    }
+  ]
+}

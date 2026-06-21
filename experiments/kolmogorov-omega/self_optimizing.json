@@ -1,0 +1,90 @@
+[
+  {
+    "trial": "MAX_OMEGA",
+    "objective": "max",
+    "start": [
+      0,
+      14,
+      14,
+      14,
+      14
+    ],
+    "final": [
+      0,
+      9,
+      9,
+      9,
+      9
+    ],
+    "final_label": "INC AND AND AND AND JNZ",
+    "final_omega": 0.816916,
+    "steps": 62,
+    "trajectory_len": 7
+  },
+  {
+    "trial": "MIN_OMEGA",
+    "objective": "min",
+    "start": [
+      0,
+      14,
+      14,
+      14,
+      14
+    ],
+    "final": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "final_label": "INC INC INC INC INC JNZ",
+    "final_omega": 0.29071,
+    "steps": 60,
+    "trajectory_len": 5
+  },
+  {
+    "trial": "MAX_FROM_A",
+    "objective": "max",
+    "start": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "final": [
+      0,
+      9,
+      9,
+      9,
+      9
+    ],
+    "final_label": "INC AND AND AND AND JNZ",
+    "final_omega": 0.816916,
+    "steps": 61,
+    "trajectory_len": 6
+  },
+  {
+    "trial": "MAX_FROM_RANDOM",
+    "objective": "max",
+    "start": [
+      0,
+      7,
+      3,
+      13,
+      11
+    ],
+    "final": [
+      0,
+      9,
+      9,
+      9,
+      9
+    ],
+    "final_label": "INC AND AND AND AND JNZ",
+    "final_omega": 0.816916,
+    "steps": 60,
+    "trajectory_len": 5
+  }
+]

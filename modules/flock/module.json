@@ -1,0 +1,82 @@
+{
+  "name": "flock",
+  "version": "0.1.0",
+  "description": "FLOCK: 4-agent boids simulation with separation/alignment/cohesion.",
+  "resources": {
+    "luts": 266,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "boids"
+    ]
+  },
+  "top_module": "flock",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "STEP",
+      "access": "w",
+      "desc": "bit 0 = step one tick"
+    },
+    {
+      "offset": "0x004",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bits [7:0] = step count"
+    },
+    {
+      "offset": "0x008",
+      "name": "RESET",
+      "access": "w",
+      "desc": "bit 0 = reset to initial positions"
+    },
+    {
+      "offset": "0x010",
+      "name": "X0",
+      "access": "r",
+      "desc": "agent 0 X position (signed 8-bit)"
+    },
+    {
+      "offset": "0x014",
+      "name": "Y0",
+      "access": "r"
+    },
+    {
+      "offset": "0x018",
+      "name": "X1",
+      "access": "r"
+    },
+    {
+      "offset": "0x01C",
+      "name": "Y1",
+      "access": "r"
+    },
+    {
+      "offset": "0x020",
+      "name": "X2",
+      "access": "r"
+    },
+    {
+      "offset": "0x024",
+      "name": "Y2",
+      "access": "r"
+    },
+    {
+      "offset": "0x028",
+      "name": "X3",
+      "access": "r"
+    },
+    {
+      "offset": "0x02C",
+      "name": "Y3",
+      "access": "r"
+    }
+  ]
+}

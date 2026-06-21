@@ -1,0 +1,66 @@
+{
+  "name": "apex",
+  "top_module": "apex",
+  "description": "Asynchronous Priority Evaluation matriX \u2014 16-entry hardware priority queue with min/max mode",
+  "resources": {
+    "luts": 279,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "PUSH_VAL",
+      "access": "w",
+      "desc": "stage 32-bit value for next push"
+    },
+    {
+      "offset": "0x004",
+      "name": "PUSH_PRI",
+      "access": "w",
+      "desc": "16-bit priority; triggers insertion"
+    },
+    {
+      "offset": "0x008",
+      "name": "POP_VAL",
+      "access": "r",
+      "desc": "dequeue top entry (removes it)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "PEEK_VAL",
+      "access": "r",
+      "desc": "top value without removal"
+    },
+    {
+      "offset": "0x010",
+      "name": "PEEK_PRI",
+      "access": "r",
+      "desc": "top priority without removal"
+    },
+    {
+      "offset": "0x014",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "current occupancy (0-16)"
+    },
+    {
+      "offset": "0x018",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = clear, bit 1 = min mode"
+    },
+    {
+      "offset": "0x01C",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = empty, bit 1 = full, bit 2 = min_mode"
+    }
+  ]
+}

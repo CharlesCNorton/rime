@@ -1,0 +1,23 @@
+{
+  "usb_instance": null,
+  "usb_vid": null,
+  "usb_pid": null,
+  "usb_serial": null,
+  "baud": 115200,
+  "target": {
+    "family": "ecp5",
+    "device": "LFE5U-25F",
+    "package": "CABGA256",
+    "size": "25k",
+    "clock_hz": 50000000,
+    "sys_clock_hz": 25000000,
+    "flash_size_bytes": 16777216,
+    "sdram_word_count": 16777216,
+    "lpf": null
+  },
+  "sdram_errata": {
+    "_comment": "Per-byte mask for known stuck SDRAM cells on this silicon. Keys are decimal byte offsets within a 32 KB readback, values are AND-masks (0xFF = no errata).",
+    "29254": 127,
+    "31911": 251
+  }
+}

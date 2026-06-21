@@ -1,0 +1,71 @@
+{
+  "name": "taper",
+  "version": "0.1.0",
+  "description": "TAPER: Tapered Arithmetic Precision Evaluation Register. 8-bit posit coprocessor.",
+  "resources": {
+    "luts": 125,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "posit_alu"
+    ]
+  },
+  "top_module": "taper",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "OP_A",
+      "access": "w",
+      "desc": "signed 8-bit operand A (-128..127)"
+    },
+    {
+      "offset": "0x004",
+      "name": "OP_B",
+      "access": "w",
+      "desc": "signed 8-bit operand B"
+    },
+    {
+      "offset": "0x008",
+      "name": "ADD",
+      "access": "r",
+      "desc": "saturating A + B"
+    },
+    {
+      "offset": "0x00C",
+      "name": "MUL",
+      "access": "r",
+      "desc": "A * B (signed, lower 8 bits of 16-bit product)"
+    },
+    {
+      "offset": "0x010",
+      "name": "MUL_HI",
+      "access": "r",
+      "desc": "upper 8 bits of A * B"
+    },
+    {
+      "offset": "0x014",
+      "name": "ABS_A",
+      "access": "r",
+      "desc": "A|"
+    },
+    {
+      "offset": "0x018",
+      "name": "MIN",
+      "access": "r",
+      "desc": "min(A, B)"
+    },
+    {
+      "offset": "0x01C",
+      "name": "MAX",
+      "access": "r",
+      "desc": "max(A, B)"
+    }
+  ]
+}

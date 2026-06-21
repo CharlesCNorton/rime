@@ -1,0 +1,98 @@
+{
+  "name": "chord",
+  "version": "0.1.0",
+  "description": "CHORD: 4-voice PWM tone generator with amplitude control.",
+  "resources": {
+    "luts": 347,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "audio_synth"
+    ]
+  },
+  "top_module": "chord",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "V0_FREQ",
+      "access": "w",
+      "desc": "voice 0 frequency tuning word (32-bit phase increment)"
+    },
+    {
+      "offset": "0x004",
+      "name": "V0_AMP",
+      "access": "w",
+      "desc": "voice 0 amplitude (0-255)"
+    },
+    {
+      "offset": "0x008",
+      "name": "V1_FREQ",
+      "access": "w"
+    },
+    {
+      "offset": "0x00C",
+      "name": "V1_AMP",
+      "access": "w"
+    },
+    {
+      "offset": "0x010",
+      "name": "V2_FREQ",
+      "access": "w"
+    },
+    {
+      "offset": "0x014",
+      "name": "V2_AMP",
+      "access": "w"
+    },
+    {
+      "offset": "0x018",
+      "name": "V3_FREQ",
+      "access": "w"
+    },
+    {
+      "offset": "0x01C",
+      "name": "V3_AMP",
+      "access": "w"
+    },
+    {
+      "offset": "0x020",
+      "name": "SAMPLE",
+      "access": "r",
+      "desc": "mixed 8-bit output"
+    },
+    {
+      "offset": "0x024",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0=enable, bit 1=reset phases"
+    },
+    {
+      "offset": "0x028",
+      "name": "V0_WAVE",
+      "access": "w",
+      "desc": "voice 0 waveform: 0=square, 1=saw, 2=tri, 3=sine"
+    },
+    {
+      "offset": "0x02C",
+      "name": "V1_WAVE",
+      "access": "w"
+    },
+    {
+      "offset": "0x030",
+      "name": "V2_WAVE",
+      "access": "w"
+    },
+    {
+      "offset": "0x034",
+      "name": "V3_WAVE",
+      "access": "w"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "name": "ember",
+  "top_module": "ember",
+  "description": "EMBER: self-sustaining hardware TRNG with XOR topology rotation \u2014 192 ring oscillators always on, 4 precomputed XOR topologies from thermal geometry data, entropy-driven topology switching, AES-128-CBC conditioning, NIST SP 800-90B health tests",
+  "resources": {
+    "luts": 1065,
+    "brams": 2,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "placement": {
+    "strategy": "quadrant_isolation",
+    "ember_quadrants": [
+      "top_left",
+      "top_right",
+      "bottom_left"
+    ],
+    "computation_quadrant": "bottom_right",
+    "ring_paths": {
+      "path_a": {
+        "rows": [
+          26,
+          50
+        ],
+        "cols": [
+          0,
+          35
+        ]
+      },
+      "path_b": {
+        "rows": [
+          26,
+          50
+        ],
+        "cols": [
+          36,
+          72
+        ]
+      },
+      "path_c": {
+        "rows": [
+          0,
+          25
+        ],
+        "cols": [
+          0,
+          35
+        ]
+      }
+    }
+  },
+  "topologies": {
+    "0": "concentric_rectangles",
+    "1": "isolation_radial",
+    "2": "single_hot_row",
+    "3": "opposing_walls"
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "ENTROPY",
+      "access": "r",
+      "desc": "conditioned byte (0xFFFFFFFF if empty)"
+    },
+    {
+      "offset": "0x004",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "[0]warmed [1]aes_ready [2]apt_alarm [3]stuck [4]valid"
+    },
+    {
+      "offset": "0x008",
+      "name": "RING_FREQ",
+      "access": "r",
+      "desc": "ring 0 frequency count"
+    },
+    {
+      "offset": "0x00C",
+      "name": "STUCK",
+      "access": "r",
+      "desc": "per-channel stuck bitmap [7:0]"
+    },
+    {
+      "offset": "0x010",
+      "name": "WARMUP",
+      "access": "r",
+      "desc": "warmup timer"
+    },
+    {
+      "offset": "0x014",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "[0]soft_reset [2:1]topology_select"
+    },
+    {
+      "offset": "0x018",
+      "name": "HEALTH",
+      "access": "r",
+      "desc": "APT window count [9:0]"
+    },
+    {
+      "offset": "0x01C",
+      "name": "TOPOLOGY",
+      "access": "r",
+      "desc": "active topology [1:0], switch count [31:2]"
+    },
+    {
+      "offset": "0x020",
+      "name": "ENT_COUNT",
+      "access": "r",
+      "desc": "total conditioned bytes"
+    },
+    {
+      "offset": "0x024",
+      "name": "RAW_BYTE",
+      "access": "r",
+      "desc": "pre-AES whitened byte"
+    },
+    {
+      "offset": "0x028",
+      "name": "AUTO_ROTATE",
+      "access": "w",
+      "desc": "[0]enable auto-rotation from entropy feedback"
+    },
+    {
+      "offset": "0x02C",
+      "name": "ROTATE_INT",
+      "access": "w",
+      "desc": "auto-rotation interval (conditioned bytes between switches)"
+    }
+  ]
+}

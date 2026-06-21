@@ -1,0 +1,78 @@
+{
+  "name": "profile",
+  "version": "0.1.0",
+  "description": "PROFILE: on-silicon execution profiler via passive bus snoop.",
+  "resources": {
+    "luts": 431,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset",
+      "snoop"
+    ],
+    "provides": [
+      "profile"
+    ]
+  },
+  "top_module": "profile",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = start (reset counters + run), bit 1 = stop"
+    },
+    {
+      "offset": "0x004",
+      "name": "CYCLES",
+      "access": "r",
+      "desc": "clock cycles counted while active"
+    },
+    {
+      "offset": "0x008",
+      "name": "TXNS",
+      "access": "r",
+      "desc": "completed bus transactions"
+    },
+    {
+      "offset": "0x00C",
+      "name": "READS",
+      "access": "r",
+      "desc": "transactions with wstrb == 0"
+    },
+    {
+      "offset": "0x010",
+      "name": "WRITES",
+      "access": "r",
+      "desc": "transactions with wstrb != 0"
+    },
+    {
+      "offset": "0x014",
+      "name": "BRAM",
+      "access": "r",
+      "desc": "transactions to 0x0xxxxxxx (code/data RAM)"
+    },
+    {
+      "offset": "0x018",
+      "name": "UART",
+      "access": "r",
+      "desc": "transactions to 0x2xxxxxxx"
+    },
+    {
+      "offset": "0x01C",
+      "name": "MODBUS",
+      "access": "r",
+      "desc": "transactions to 0x3xxxxxxx (module region)"
+    },
+    {
+      "offset": "0x020",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = active"
+    }
+  ]
+}

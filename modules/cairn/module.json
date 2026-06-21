@@ -1,0 +1,59 @@
+{
+  "name": "cairn",
+  "version": "0.1.0",
+  "description": "CAIRN: hardware stack machine coprocessor (Forth-style).",
+  "resources": {
+    "luts": 556,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "stack_machine"
+    ]
+  },
+  "top_module": "cairn",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "PUSH",
+      "access": "w",
+      "desc": "push value onto stack"
+    },
+    {
+      "offset": "0x004",
+      "name": "POP",
+      "access": "r",
+      "desc": "pop and return top of stack"
+    },
+    {
+      "offset": "0x008",
+      "name": "PEEK",
+      "access": "r",
+      "desc": "read top without popping"
+    },
+    {
+      "offset": "0x00C",
+      "name": "OP",
+      "access": "w",
+      "desc": "execute operation on stack:"
+    },
+    {
+      "offset": "0x010",
+      "name": "DEPTH",
+      "access": "r",
+      "desc": "current stack depth (0-16)"
+    },
+    {
+      "offset": "0x014",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = clear stack"
+    }
+  ]
+}

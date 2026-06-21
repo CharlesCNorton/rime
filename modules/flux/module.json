@@ -1,0 +1,71 @@
+{
+  "name": "flux",
+  "version": "0.1.0",
+  "description": "FLUX: hardware PID controller with anti-windup.",
+  "resources": {
+    "luts": 164,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "pid_controller"
+    ]
+  },
+  "top_module": "flux",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "SETPOINT",
+      "access": "w",
+      "desc": "target value (signed 16-bit)"
+    },
+    {
+      "offset": "0x004",
+      "name": "MEASURED",
+      "access": "w",
+      "desc": "current measurement (signed 16-bit), triggers one PID step"
+    },
+    {
+      "offset": "0x008",
+      "name": "OUTPUT",
+      "access": "r",
+      "desc": "PID output (signed 16-bit, clamped)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "KP",
+      "access": "w",
+      "desc": "proportional gain (8.8 fixed-point)"
+    },
+    {
+      "offset": "0x010",
+      "name": "KI",
+      "access": "w",
+      "desc": "integral gain (8.8 fixed-point)"
+    },
+    {
+      "offset": "0x014",
+      "name": "KD",
+      "access": "w",
+      "desc": "derivative gain (8.8 fixed-point)"
+    },
+    {
+      "offset": "0x018",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset integrator and state"
+    },
+    {
+      "offset": "0x01C",
+      "name": "ERROR",
+      "access": "r",
+      "desc": "last error (setpoint - measured)"
+    }
+  ]
+}

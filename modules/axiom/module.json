@@ -1,0 +1,59 @@
+{
+  "name": "axiom",
+  "version": "0.1.0",
+  "description": "AXIOM: hardware JSON/structured data token scanner.",
+  "resources": {
+    "luts": 187,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "tokenizer"
+    ]
+  },
+  "top_module": "axiom",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "INPUT",
+      "access": "w",
+      "desc": "feed one byte"
+    },
+    {
+      "offset": "0x004",
+      "name": "TOKEN",
+      "access": "r",
+      "desc": "last token type:"
+    },
+    {
+      "offset": "0x008",
+      "name": "DEPTH",
+      "access": "r",
+      "desc": "nesting depth (object+array)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset"
+    },
+    {
+      "offset": "0x010",
+      "name": "OFFSET",
+      "access": "r",
+      "desc": "byte offset since reset"
+    },
+    {
+      "offset": "0x014",
+      "name": "ERRORS",
+      "access": "r",
+      "desc": "count of unexpected tokens (unmatched braces etc)"
+    }
+  ]
+}

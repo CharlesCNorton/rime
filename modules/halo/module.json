@@ -1,0 +1,60 @@
+{
+  "name": "halo",
+  "top_module": "halo",
+  "description": "Hardware Assisted Loop Orchestrator \u2014 256-entry 32-bit ring buffer with watermark",
+  "resources": {
+    "luts": 175,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "PUSH",
+      "access": "w",
+      "desc": "enqueue 32-bit word at head"
+    },
+    {
+      "offset": "0x004",
+      "name": "POP",
+      "access": "r",
+      "desc": "dequeue from tail (advances tail)"
+    },
+    {
+      "offset": "0x008",
+      "name": "PEEK",
+      "access": "r",
+      "desc": "read tail without advancing"
+    },
+    {
+      "offset": "0x00C",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0=empty, bit 1=full, bit 2=watermark, bit 3=overflow"
+    },
+    {
+      "offset": "0x010",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "current occupancy"
+    },
+    {
+      "offset": "0x014",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0=clear, bits[7:1]=watermark threshold"
+    },
+    {
+      "offset": "0x018",
+      "name": "DROPPED",
+      "access": "r",
+      "desc": "number of words dropped due to overflow since last clear"
+    }
+  ]
+}

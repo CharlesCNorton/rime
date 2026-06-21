@@ -1,0 +1,64 @@
+{
+  "name": "mirror",
+  "top_module": "mirror",
+  "description": "Memory Indexing and Rapid Resolution Object Router \u2014 16-entry masked pseudo-TCAM",
+  "resources": {
+    "luts": 108,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "QUERY",
+      "access": "w",
+      "desc": "32-bit search key, triggers parallel lookup"
+    },
+    {
+      "offset": "0x004",
+      "name": "RESULT",
+      "access": "r",
+      "desc": "matched value (0 if no match)"
+    },
+    {
+      "offset": "0x008",
+      "name": "HIT",
+      "access": "r",
+      "desc": "bit 0 = match found, bits [7:4] = matched index"
+    },
+    {
+      "offset": "0x00C",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "number of valid entries"
+    },
+    {
+      "offset": "0x100-0x13C",
+      "name": "KEY[0..15]",
+      "access": "w"
+    },
+    {
+      "offset": "0x140-0x17C",
+      "name": "MASK[0..15]",
+      "access": "w",
+      "desc": "1 = compare, 0 = wildcard"
+    },
+    {
+      "offset": "0x180-0x1BC",
+      "name": "VALUE[0..15]",
+      "access": "w"
+    },
+    {
+      "offset": "0x1C0-0x1FC",
+      "name": "VALID[0..15]",
+      "access": "w",
+      "desc": "bit 0 = entry active"
+    }
+  ]
+}

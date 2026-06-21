@@ -1,0 +1,16 @@
+{
+  "_chain_hash_note": "Chain regression hash varies run-to-run (STATS/LAST_ERROR carry state). Drift detection enforces (a) regression exit 0 and (b) fingerprint match. Hash is reported for forensics only.",
+  "_comment": "Silicon drift manifest. Compared by scripts/silicon_drift.py.",
+  "firmware": {
+    "addr_bytes": "3",
+    "board_name": "RIME",
+    "caps0": "0xFF",
+    "caps1": "0xFF",
+    "erase_size": "65536",
+    "jedec": "0xEF 0x40 0x18",
+    "max_program": "16",
+    "page_size": "256",
+    "read_chunk": "16",
+    "service_version": "5.3"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "name": "iris",
+  "top_module": "iris",
+  "description": "IRIS: Introspective Register Inspection System \u2014 polymorphic DMA-driven data sampler. Autonomously reads registers from any composed module via bus arbitration. Configurable sample list, BRAM ring buffer, self-describing frame output. The first non-CPU bus master in the compositor.",
+  "resources": {
+    "luts": 398,
+    "brams": 1,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": [
+      "dma"
+    ]
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "[0]running [1]buffer_half [2]buffer_full [3]overflow"
+    },
+    {
+      "offset": "0x004",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "[0]start/stop [1]single_shot [2]clear_buffer"
+    },
+    {
+      "offset": "0x008",
+      "name": "SAMPLE_CNT",
+      "access": "r",
+      "desc": "total DMA reads completed [31:0]"
+    },
+    {
+      "offset": "0x00C",
+      "name": "FRAME_CNT",
+      "access": "r",
+      "desc": "complete frames captured [31:0]"
+    },
+    {
+      "offset": "0x010",
+      "name": "LIST_LEN",
+      "access": "w",
+      "desc": "number of active sample-list entries (1-16)"
+    },
+    {
+      "offset": "0x014",
+      "name": "LIST_RATE",
+      "access": "w",
+      "desc": "cycles between sample-list sweeps [31:0]"
+    },
+    {
+      "offset": "0x018",
+      "name": "BUF_RD",
+      "access": "r",
+      "desc": "next sample from ring buffer (auto-advance)"
+    },
+    {
+      "offset": "0x01C",
+      "name": "BUF_LEVEL",
+      "access": "r",
+      "desc": "samples available in ring buffer [10:0]"
+    },
+    {
+      "offset": "0x020",
+      "name": "MANIFEST",
+      "access": "r",
+      "desc": "composition manifest word (auto-advance through 16 entries)"
+    },
+    {
+      "offset": "0x100-0x13C",
+      "name": "SAMPLE_LIST[0..15]",
+      "access": "w",
+      "desc": "target address for each sample slot"
+    },
+    {
+      "offset": "0x140-0x17C",
+      "name": "SAMPLE_TAG[0..15]",
+      "access": "w",
+      "desc": "metadata tag per slot (module_id, register_id, type)"
+    }
+  ]
+}

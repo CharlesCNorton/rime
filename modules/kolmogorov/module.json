@@ -1,0 +1,17 @@
+{
+  "name": "kolmogorov",
+  "top_module": "kolmogorov",
+  "description": "KOLMOGOROV: 200-interpreter parallel Kolmogorov complexity estimator for self-referential complexity collapse experiments",
+  "resources": {
+    "luts": 462,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": []
+}

@@ -1,0 +1,36 @@
+{
+  "name": "rime-i",
+  "version": "0.1.0",
+  "description": "RIME-I: minimal RV32I base integer CPU for autonomous program execution",
+  "isa": "RV32I",
+  "extensions": [],
+  "resources": {
+    "luts": 4050,
+    "brams": 7,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "uart_tx",
+      "uart_rx",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "cpu_bus"
+    ]
+  },
+  "memory": {
+    "bram_bytes": 14336,
+    "bram_count": 7,
+    "layout": "unified",
+    "boot_address": "0x00000000"
+  },
+  "firmware": {
+    "directory": "fw/",
+    "toolchain": "riscv32-unknown-elf-gcc",
+    "march": "rv32i",
+    "mabi": "ilp32"
+  },
+  "top_module": "rime_i_top"
+}

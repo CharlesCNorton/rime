@@ -1,0 +1,54 @@
+{
+  "name": "haze",
+  "top_module": "haze",
+  "description": "HAZE: Hardware Approximation of Zoned Entropy \u2014 2D gradient noise via hash and linear interpolation",
+  "resources": {
+    "luts": 108,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "COORD_X",
+      "access": "w",
+      "desc": "16-bit X coordinate (8.8 fixed-point)"
+    },
+    {
+      "offset": "0x004",
+      "name": "COORD_Y",
+      "access": "w",
+      "desc": "16-bit Y coordinate (8.8 fixed-point)"
+    },
+    {
+      "offset": "0x008",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = compute, bit 1 = reset"
+    },
+    {
+      "offset": "0x00C",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done"
+    },
+    {
+      "offset": "0x010",
+      "name": "VALUE",
+      "access": "r",
+      "desc": "16-bit noise value (0-255 range, 8.8 FP)"
+    },
+    {
+      "offset": "0x014",
+      "name": "HASH_DBG",
+      "access": "r",
+      "desc": "raw hash at floor(x),floor(y) (debug)"
+    }
+  ]
+}

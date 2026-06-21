@@ -1,0 +1,386 @@
+[
+  {
+    "isa": "A",
+    "ops": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.0,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 0
+  },
+  {
+    "isa": "B",
+    "ops": [
+      0,
+      6,
+      7,
+      8,
+      9
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.6,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 6
+  },
+  {
+    "isa": "C",
+    "ops": [
+      0,
+      11,
+      13,
+      3,
+      10
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.8,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 4
+  },
+  {
+    "isa": "D",
+    "ops": [
+      0,
+      12,
+      7,
+      3,
+      10
+    ],
+    "omega": 0.0,
+    "median_gens": 1,
+    "mean_gens": 1.7,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 9
+  },
+  {
+    "isa": "E",
+    "ops": [
+      0,
+      6,
+      2,
+      13,
+      4
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.0,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 0
+  },
+  {
+    "isa": "F",
+    "ops": [
+      0,
+      1,
+      2,
+      8,
+      4
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.0,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 1
+  },
+  {
+    "isa": "G",
+    "ops": [
+      0,
+      11,
+      7,
+      8,
+      9
+    ],
+    "omega": 0.0,
+    "median_gens": 8,
+    "mean_gens": 10.3,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 38
+  },
+  {
+    "isa": "MAX",
+    "ops": [
+      0,
+      9,
+      9,
+      9,
+      9
+    ],
+    "omega": 0.0,
+    "median_gens": 5000,
+    "mean_gens": 5000.0,
+    "solved": 0,
+    "min_gens": 5000,
+    "max_gens_seen": 5000
+  },
+  {
+    "isa": "MIN",
+    "ops": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "omega": 0.0,
+    "median_gens": 5000,
+    "mean_gens": 5000.0,
+    "solved": 0,
+    "min_gens": 5000,
+    "max_gens_seen": 5000
+  },
+  {
+    "isa": "X08",
+    "ops": [
+      0,
+      4,
+      2,
+      3,
+      9
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.0,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 2
+  },
+  {
+    "isa": "X11",
+    "ops": [
+      0,
+      6,
+      2,
+      3,
+      9
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.1,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 2
+  },
+  {
+    "isa": "X14",
+    "ops": [
+      0,
+      4,
+      2,
+      8,
+      9
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.1,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 2
+  },
+  {
+    "isa": "X17",
+    "ops": [
+      0,
+      6,
+      2,
+      8,
+      9
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.1,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 2
+  },
+  {
+    "isa": "X20",
+    "ops": [
+      0,
+      4,
+      2,
+      3,
+      11
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.0,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 2
+  },
+  {
+    "isa": "X23",
+    "ops": [
+      0,
+      6,
+      2,
+      3,
+      11
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.1,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 2
+  },
+  {
+    "isa": "X26",
+    "ops": [
+      0,
+      4,
+      2,
+      8,
+      11
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.1,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 3
+  },
+  {
+    "isa": "X29",
+    "ops": [
+      0,
+      6,
+      2,
+      8,
+      11
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.2,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 3
+  },
+  {
+    "isa": "X32",
+    "ops": [
+      0,
+      4,
+      2,
+      3,
+      1
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.0,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 1
+  },
+  {
+    "isa": "X35",
+    "ops": [
+      0,
+      6,
+      2,
+      3,
+      1
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.0,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 1
+  },
+  {
+    "isa": "X38",
+    "ops": [
+      0,
+      4,
+      2,
+      8,
+      1
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.0,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 1
+  },
+  {
+    "isa": "X41",
+    "ops": [
+      0,
+      6,
+      2,
+      8,
+      1
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.0,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 1
+  },
+  {
+    "isa": "X44",
+    "ops": [
+      0,
+      4,
+      7,
+      3,
+      9
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.4,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 4
+  },
+  {
+    "isa": "X47",
+    "ops": [
+      0,
+      6,
+      7,
+      3,
+      9
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.8,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 5
+  },
+  {
+    "isa": "X50",
+    "ops": [
+      0,
+      4,
+      7,
+      8,
+      9
+    ],
+    "omega": 0.0,
+    "median_gens": 0,
+    "mean_gens": 0.6,
+    "solved": 100,
+    "min_gens": 0,
+    "max_gens_seen": 10
+  }
+]

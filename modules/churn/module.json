@@ -1,0 +1,54 @@
+{
+  "name": "churn",
+  "top_module": "churn",
+  "description": "Continuous Hash Updating and Rolling Node \u2014 32-byte Rabin-Karp rolling hash with boundary detection",
+  "resources": {
+    "luts": 174,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "DATA",
+      "access": "w",
+      "desc": "feed one byte, hash updates"
+    },
+    {
+      "offset": "0x004",
+      "name": "HASH",
+      "access": "r",
+      "desc": "current 32-bit rolling hash"
+    },
+    {
+      "offset": "0x008",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset"
+    },
+    {
+      "offset": "0x00C",
+      "name": "BOUNDARY",
+      "access": "r",
+      "desc": "bit 0 = (hash & mask) == 0"
+    },
+    {
+      "offset": "0x010",
+      "name": "TARGET",
+      "access": "w",
+      "desc": "32-bit boundary mask"
+    },
+    {
+      "offset": "0x014",
+      "name": "BYTECOUNT",
+      "access": "r",
+      "desc": "bytes fed since last reset"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "name": "forge",
+  "version": "0.1.0",
+  "description": "FORGE: 64-round iterative compression using SHA-256 primitives (correct K/Ch/Maj/Sigma; simplified single-word message schedule \u2014 output is not a standard SHA-256 digest).",
+  "resources": {
+    "luts": 1011,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "sha256"
+    ]
+  },
+  "top_module": "forge",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "DATA",
+      "access": "w",
+      "desc": "32-bit input word"
+    },
+    {
+      "offset": "0x004",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = compute hash"
+    },
+    {
+      "offset": "0x008",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done"
+    },
+    {
+      "offset": "0x00C",
+      "name": "H0",
+      "access": "r",
+      "desc": "hash word 0"
+    },
+    {
+      "offset": "0x010",
+      "name": "H1",
+      "access": "r",
+      "desc": "hash word 1"
+    },
+    {
+      "offset": "0x014",
+      "name": "H2",
+      "access": "r",
+      "desc": "hash word 2"
+    },
+    {
+      "offset": "0x018",
+      "name": "H3",
+      "access": "r",
+      "desc": "hash word 3"
+    }
+  ]
+}

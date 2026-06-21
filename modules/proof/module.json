@@ -1,0 +1,54 @@
+{
+  "name": "proof",
+  "top_module": "proof",
+  "description": "PROOF: Protected Read-Once Operational Fence \u2014 constant-time 32-byte comparison",
+  "resources": {
+    "luts": 1076,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000-0x01C",
+      "name": "BUF_A[0..7]",
+      "access": "w",
+      "desc": "32 bytes as 8 x 32-bit words"
+    },
+    {
+      "offset": "0x020-0x03C",
+      "name": "BUF_B[0..7]",
+      "access": "w",
+      "desc": "32 bytes as 8 x 32-bit words"
+    },
+    {
+      "offset": "0x040",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = compare, bit 1 = reset"
+    },
+    {
+      "offset": "0x044",
+      "name": "RESULT",
+      "access": "r",
+      "desc": "1 = match, 0 = mismatch"
+    },
+    {
+      "offset": "0x048",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done"
+    },
+    {
+      "offset": "0x04C",
+      "name": "DIFF_OR",
+      "access": "r",
+      "desc": "OR of all XOR diffs (0 = match)"
+    }
+  ]
+}

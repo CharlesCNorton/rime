@@ -1,0 +1,42 @@
+{
+  "name": "rank",
+  "top_module": "rank",
+  "description": "RANK: Rapid Associative Numerical Keyed sorter \u2014 8-element parallel sorting network",
+  "resources": {
+    "luts": 885,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000-0x01C",
+      "name": "INPUT[0..7]",
+      "access": "w",
+      "desc": "8 unsorted 32-bit values"
+    },
+    {
+      "offset": "0x020-0x03C",
+      "name": "OUTPUT[0..7]",
+      "access": "r",
+      "desc": "sorted ascending"
+    },
+    {
+      "offset": "0x040",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = sort, bit 1 = reset"
+    },
+    {
+      "offset": "0x044",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done"
+    }
+  ]
+}

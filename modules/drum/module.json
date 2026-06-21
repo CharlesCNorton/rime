@@ -1,0 +1,48 @@
+{
+  "name": "drum",
+  "top_module": "drum",
+  "description": "DRUM: Driven Register Utility for Microsequencing \u2014 16-instruction programmable sequencer with output port",
+  "resources": {
+    "luts": 2079,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000-0x03C",
+      "name": "PROG[0..15]",
+      "access": "w",
+      "desc": "instruction memory"
+    },
+    {
+      "offset": "0x040",
+      "name": "OUTPUT",
+      "access": "r",
+      "desc": "last OUT value"
+    },
+    {
+      "offset": "0x044",
+      "name": "PC",
+      "access": "r",
+      "desc": "current program counter"
+    },
+    {
+      "offset": "0x048",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = running, bit 1 = halted"
+    },
+    {
+      "offset": "0x04C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = start, bit 1 = reset"
+    }
+  ]
+}

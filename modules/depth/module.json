@@ -1,0 +1,62 @@
+{
+  "name": "depth",
+  "top_module": "depth",
+  "description": "DEPTH: Dynamic Execution Profile and Thread Height tracker \u2014 stack pointer min/max via snoop",
+  "resources": {
+    "luts": 300,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": [
+      "snoop"
+    ]
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "SP_BASE",
+      "access": "w",
+      "desc": "base address to monitor (e.g. 0x00000FFC for stack top)"
+    },
+    {
+      "offset": "0x004",
+      "name": "SP_MASK",
+      "access": "w",
+      "desc": "address mask (match when (addr & mask) == (base & mask))"
+    },
+    {
+      "offset": "0x008",
+      "name": "SP_MIN",
+      "access": "r",
+      "desc": "minimum SP value observed"
+    },
+    {
+      "offset": "0x00C",
+      "name": "SP_MAX",
+      "access": "r",
+      "desc": "maximum SP value observed"
+    },
+    {
+      "offset": "0x010",
+      "name": "SAMPLES",
+      "access": "r",
+      "desc": "number of SP writes observed"
+    },
+    {
+      "offset": "0x014",
+      "name": "LAST_SP",
+      "access": "r",
+      "desc": "most recent SP value"
+    },
+    {
+      "offset": "0x018",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset, bit 1 = enable tracking"
+    }
+  ]
+}

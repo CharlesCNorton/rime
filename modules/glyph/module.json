@@ -1,0 +1,65 @@
+{
+  "name": "glyph",
+  "version": "0.1.0",
+  "description": "GLYPH: Galois Logic for Yielding Polynomial Hashes. GF(2^8) matrix multiplier.",
+  "resources": {
+    "luts": 65,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "galois_alu"
+    ]
+  },
+  "top_module": "glyph",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "OP_A",
+      "access": "w",
+      "desc": "8-bit operand A"
+    },
+    {
+      "offset": "0x004",
+      "name": "OP_B",
+      "access": "w",
+      "desc": "8-bit operand B"
+    },
+    {
+      "offset": "0x008",
+      "name": "MUL",
+      "access": "r",
+      "desc": "GF multiply A*B"
+    },
+    {
+      "offset": "0x00C",
+      "name": "INV",
+      "access": "r",
+      "desc": "GF multiplicative inverse of A"
+    },
+    {
+      "offset": "0x010",
+      "name": "EXP",
+      "access": "r",
+      "desc": "GF exponentiation A^B (repeated multiplication)"
+    },
+    {
+      "offset": "0x014",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = start EXP computation"
+    },
+    {
+      "offset": "0x018",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = EXP done"
+    }
+  ]
+}

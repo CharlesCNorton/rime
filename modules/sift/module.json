@@ -1,0 +1,53 @@
+{
+  "name": "sift",
+  "version": "0.1.0",
+  "description": "SIFT: Set Intersection Filter Tile. Hardware Bloom filter.",
+  "resources": {
+    "luts": 313,
+    "brams": 1,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "bloom_filter"
+    ]
+  },
+  "top_module": "sift",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "INSERT",
+      "access": "w",
+      "desc": "hash and set bits for the written value"
+    },
+    {
+      "offset": "0x004",
+      "name": "QUERY",
+      "access": "write value, read result",
+      "desc": "write key, then read:"
+    },
+    {
+      "offset": "0x008",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = clear all"
+    },
+    {
+      "offset": "0x00C",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "number of insertions since last clear"
+    },
+    {
+      "offset": "0x010",
+      "name": "POPCOUNT",
+      "access": "r",
+      "desc": "number of set bits in filter"
+    }
+  ]
+}

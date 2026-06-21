@@ -1,0 +1,54 @@
+{
+  "name": "gpio",
+  "top_module": "gpio",
+  "description": "GPIO: General Purpose Input/Output \u2014 16 software-driven pins with direction, output, input, edge detect",
+  "resources": {
+    "luts": 108,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "DIR",
+      "access": "rw",
+      "desc": "bit i = 1 means pin i is output, 0 means input"
+    },
+    {
+      "offset": "0x004",
+      "name": "OUT",
+      "access": "rw",
+      "desc": "output value for pins where DIR=1"
+    },
+    {
+      "offset": "0x008",
+      "name": "IN",
+      "access": "rw",
+      "desc": "simulated input value (driven by software for testing)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "PIN",
+      "access": "r",
+      "desc": "effective pin state: DIR ? OUT : IN"
+    },
+    {
+      "offset": "0x010",
+      "name": "EDGE",
+      "access": "r",
+      "desc": "sticky rising-edge latches per pin (clears on read)"
+    },
+    {
+      "offset": "0x014",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = clear EDGE latches manually"
+    }
+  ]
+}

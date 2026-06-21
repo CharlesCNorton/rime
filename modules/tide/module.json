@@ -1,0 +1,53 @@
+{
+  "name": "tide",
+  "version": "0.1.0",
+  "description": "TIDE: DDS waveform generator with phase accumulator.",
+  "resources": {
+    "luts": 162,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "dds"
+    ]
+  },
+  "top_module": "tide",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "FREQ",
+      "access": "w",
+      "desc": "frequency tuning word (phase increment per tick)"
+    },
+    {
+      "offset": "0x004",
+      "name": "WAVE",
+      "access": "w",
+      "desc": "0=sine, 1=square, 2=saw, 3=triangle"
+    },
+    {
+      "offset": "0x008",
+      "name": "SAMPLE",
+      "access": "r",
+      "desc": "current 8-bit output sample"
+    },
+    {
+      "offset": "0x00C",
+      "name": "PHASE",
+      "access": "rw",
+      "desc": "current 32-bit phase accumulator"
+    },
+    {
+      "offset": "0x010",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0=enable, bit 1=reset phase"
+    }
+  ]
+}

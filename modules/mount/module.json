@@ -1,0 +1,54 @@
+{
+  "name": "mount",
+  "top_module": "mount",
+  "description": "Modular Operation Utility for Number Theory \u2014 256-bit Montgomery multiplier",
+  "resources": {
+    "luts": 2327,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000-0x01C",
+      "name": "A[0..7]",
+      "access": "w",
+      "desc": "256-bit operand A (little-endian words)"
+    },
+    {
+      "offset": "0x020-0x03C",
+      "name": "B[0..7]",
+      "access": "w",
+      "desc": "256-bit operand B"
+    },
+    {
+      "offset": "0x040-0x05C",
+      "name": "M[0..7]",
+      "access": "w",
+      "desc": "256-bit modulus (must be odd)"
+    },
+    {
+      "offset": "0x060",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = start"
+    },
+    {
+      "offset": "0x064",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done"
+    },
+    {
+      "offset": "0x080-0x09C",
+      "name": "RESULT[0..7]",
+      "access": "r",
+      "desc": "256-bit result"
+    }
+  ]
+}

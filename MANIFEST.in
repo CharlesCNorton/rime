@@ -1,0 +1,12 @@
+# Ship the firmware / module / config sources in the sdist so the wheel build
+# (setup.py's build_py) can copy them into icepi/_bundled. Build artifacts,
+# caches, and the standalone experiments are excluded.
+graft firmware
+graft modules
+graft config
+include LICENSE README.md AGENTS.md PROTOCOL.md
+prune experiments
+prune firmware/tests
+global-exclude *.bit *.config *.vcd *.pyc
+global-exclude __pycache__
+recursive-exclude icepi/_bundled *

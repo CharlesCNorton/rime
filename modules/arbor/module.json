@@ -1,0 +1,54 @@
+{
+  "name": "arbor",
+  "top_module": "arbor",
+  "description": "ARBOR: Arbitrated Routing for Board-level Ordered Requests \u2014 16-source priority interrupt controller",
+  "resources": {
+    "luts": 140,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "PENDING",
+      "access": "rw",
+      "desc": "16-bit pending bitmap (write-1-to-set)"
+    },
+    {
+      "offset": "0x004",
+      "name": "MASK",
+      "access": "rw",
+      "desc": "16-bit mask (1 = enabled, 0 = masked)"
+    },
+    {
+      "offset": "0x008",
+      "name": "CLAIM",
+      "access": "r",
+      "desc": "top pending source ID + clear, returns 16 if none"
+    },
+    {
+      "offset": "0x00C",
+      "name": "ANY",
+      "access": "r",
+      "desc": "bit 0 = any pending && unmasked"
+    },
+    {
+      "offset": "0x010",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = clear all pending"
+    },
+    {
+      "offset": "0x014",
+      "name": "RAISE",
+      "access": "w",
+      "desc": "write source ID (0..15) to set that pending bit"
+    }
+  ]
+}

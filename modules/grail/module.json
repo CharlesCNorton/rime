@@ -1,0 +1,53 @@
+{
+  "name": "grail",
+  "version": "0.1.0",
+  "description": "GRAIL: Merkle tree hasher using CRC-32 pairwise reduction.",
+  "resources": {
+    "luts": 261,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "merkle_tree"
+    ]
+  },
+  "top_module": "grail",
+  "registers": [
+    {
+      "offset": "0x000-0x01C",
+      "name": "LEAF[0..7]",
+      "access": "w",
+      "desc": "32-bit leaf values"
+    },
+    {
+      "offset": "0x020",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = compute root hash"
+    },
+    {
+      "offset": "0x024",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done"
+    },
+    {
+      "offset": "0x028",
+      "name": "ROOT",
+      "access": "r",
+      "desc": "32-bit root hash"
+    },
+    {
+      "offset": "0x02C",
+      "name": "LEVEL1_0",
+      "access": "r",
+      "desc": "intermediate hash at level 1, node 0"
+    }
+  ]
+}

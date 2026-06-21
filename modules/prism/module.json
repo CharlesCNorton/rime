@@ -1,0 +1,59 @@
+{
+  "name": "prism",
+  "version": "0.1.0",
+  "description": "PRISM: RGB to grayscale/luminance converter.",
+  "resources": {
+    "luts": 205,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "color_convert"
+    ]
+  },
+  "top_module": "prism",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "RGB",
+      "access": "w",
+      "desc": "bits [23:16]=R, [15:8]=G, [7:0]=B"
+    },
+    {
+      "offset": "0x004",
+      "name": "LUMA",
+      "access": "r",
+      "desc": "8-bit luminance Y"
+    },
+    {
+      "offset": "0x008",
+      "name": "MIN_CH",
+      "access": "r",
+      "desc": "minimum of R,G,B"
+    },
+    {
+      "offset": "0x00C",
+      "name": "MAX_CH",
+      "access": "r",
+      "desc": "maximum of R,G,B"
+    },
+    {
+      "offset": "0x010",
+      "name": "SAT",
+      "access": "r",
+      "desc": "max-min (saturation estimate)"
+    },
+    {
+      "offset": "0x014",
+      "name": "INVERT",
+      "access": "r",
+      "desc": "inverted RGB (255-R, 255-G, 255-B)"
+    }
+  ]
+}

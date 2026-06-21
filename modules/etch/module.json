@@ -1,0 +1,66 @@
+{
+  "name": "etch",
+  "top_module": "etch",
+  "description": "ETCH: Encrypted Transform with Cyclic Hashing \u2014 XTEA 64-round Feistel block cipher",
+  "resources": {
+    "luts": 724,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "V0",
+      "access": "rw",
+      "desc": "plaintext/ciphertext low word"
+    },
+    {
+      "offset": "0x004",
+      "name": "V1",
+      "access": "rw",
+      "desc": "plaintext/ciphertext high word"
+    },
+    {
+      "offset": "0x008",
+      "name": "KEY0",
+      "access": "w",
+      "desc": "key word 0"
+    },
+    {
+      "offset": "0x00C",
+      "name": "KEY1",
+      "access": "w",
+      "desc": "key word 1"
+    },
+    {
+      "offset": "0x010",
+      "name": "KEY2",
+      "access": "w",
+      "desc": "key word 2"
+    },
+    {
+      "offset": "0x014",
+      "name": "KEY3",
+      "access": "w",
+      "desc": "key word 3"
+    },
+    {
+      "offset": "0x018",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = encrypt, bit 1 = decrypt, bit 2 = reset"
+    },
+    {
+      "offset": "0x01C",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done"
+    }
+  ]
+}

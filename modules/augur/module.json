@@ -1,0 +1,74 @@
+{
+  "name": "augur",
+  "version": "0.1.0",
+  "description": "AUGUR: Autonomous Uncertainty Generator for Universal Reasoning. MCMC probability core.",
+  "resources": {
+    "luts": 297,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "mcmc_sampler"
+    ]
+  },
+  "top_module": "augur",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "CHAIN0",
+      "access": "r",
+      "desc": "current state of chain 0 (16-bit)"
+    },
+    {
+      "offset": "0x004",
+      "name": "CHAIN1",
+      "access": "r"
+    },
+    {
+      "offset": "0x008",
+      "name": "CHAIN2",
+      "access": "r"
+    },
+    {
+      "offset": "0x00C",
+      "name": "CHAIN3",
+      "access": "r"
+    },
+    {
+      "offset": "0x010",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = step all chains, bit 1 = reset"
+    },
+    {
+      "offset": "0x014",
+      "name": "STEPS",
+      "access": "r",
+      "desc": "total steps taken"
+    },
+    {
+      "offset": "0x018",
+      "name": "ACCEPTS",
+      "access": "r",
+      "desc": "total accepted proposals"
+    },
+    {
+      "offset": "0x01C",
+      "name": "MEAN",
+      "access": "r",
+      "desc": "mean of all 4 chains (approximation)"
+    },
+    {
+      "offset": "0x020",
+      "name": "TARGET",
+      "access": "w",
+      "desc": "target value for the energy function"
+    }
+  ]
+}

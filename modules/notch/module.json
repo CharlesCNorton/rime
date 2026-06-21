@@ -1,0 +1,54 @@
+{
+  "name": "notch",
+  "top_module": "notch",
+  "description": "NOTCH: Noise-Opposing Transition and Contact Handler \u2014 8-channel hardware debounce filter",
+  "resources": {
+    "luts": 224,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "RAW_IN",
+      "access": "w",
+      "desc": "bits [7:0] = simulated raw input (for testing)"
+    },
+    {
+      "offset": "0x004",
+      "name": "FILTERED",
+      "access": "r",
+      "desc": "bits [7:0] = debounced output"
+    },
+    {
+      "offset": "0x008",
+      "name": "CHANGED",
+      "access": "r",
+      "desc": "bits [7:0] = channels that changed since last read (clears on read)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "PRESCALE",
+      "access": "w",
+      "desc": "16-bit sample prescaler (default 0 = every cycle)"
+    },
+    {
+      "offset": "0x010",
+      "name": "THRESHOLD",
+      "access": "w",
+      "desc": "8-bit stability count required (default 16)"
+    },
+    {
+      "offset": "0x014",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset"
+    }
+  ]
+}

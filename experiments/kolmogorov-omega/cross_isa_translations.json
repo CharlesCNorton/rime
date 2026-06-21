@@ -1,0 +1,898 @@
+[
+  {
+    "source": "A",
+    "target": "B",
+    "src_reachable": 177,
+    "tgt_reachable": 21,
+    "translatable": 21,
+    "untranslatable": 156,
+    "sample": [
+      {
+        "output": 0,
+        "src_prog_idx": 259,
+        "src_prog": "DEC DEC DEC DEC INC INC INC INC",
+        "tgt_prog_idx": 1297,
+        "tgt_prog": "NEG INC INC INC NEG INC INC INC"
+      },
+      {
+        "output": 1,
+        "src_prog_idx": 260,
+        "src_prog": "SWP DEC DEC DEC INC INC INC INC",
+        "tgt_prog_idx": 216,
+        "tgt_prog": "INC INC INC NEG INC INC INC INC"
+      },
+      {
+        "output": 2,
+        "src_prog_idx": 43,
+        "src_prog": "DEC DEC DEC INC INC INC INC INC",
+        "tgt_prog_idx": 217,
+        "tgt_prog": "NEG INC INC NEG INC INC INC INC"
+      },
+      {
+        "output": 3,
+        "src_prog_idx": 44,
+        "src_prog": "SWP DEC DEC INC INC INC INC INC",
+        "tgt_prog_idx": 36,
+        "tgt_prog": "INC INC NEG INC INC INC INC INC"
+      },
+      {
+        "output": 4,
+        "src_prog_idx": 7,
+        "src_prog": "DEC DEC INC INC INC INC INC INC",
+        "tgt_prog_idx": 37,
+        "tgt_prog": "NEG INC NEG INC INC INC INC INC"
+      },
+      {
+        "output": 5,
+        "src_prog_idx": 8,
+        "src_prog": "SWP DEC INC INC INC INC INC INC",
+        "tgt_prog_idx": 6,
+        "tgt_prog": "INC NEG INC INC INC INC INC INC"
+      },
+      {
+        "output": 6,
+        "src_prog_idx": 1,
+        "src_prog": "DEC INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 7,
+        "tgt_prog": "NEG NEG INC INC INC INC INC INC"
+      },
+      {
+        "output": 7,
+        "src_prog_idx": 2,
+        "src_prog": "SWP INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 1,
+        "tgt_prog": "NEG INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 8,
+        "src_prog_idx": 0,
+        "src_prog": "INC INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 0,
+        "tgt_prog": "INC INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 9,
+        "src_prog_idx": 100728,
+        "src_prog": "INC INC SWP XOR JNZ INC SWP INC",
+        "tgt_prog_idx": 444960,
+        "tgt_prog": "INC INC INC MOV NEG SUB SUB NEG"
+      },
+      {
+        "output": 10,
+        "src_prog_idx": 22968,
+        "src_prog": "INC INC SWP XOR JNZ SWP INC INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 11,
+        "src_prog_idx": 416605,
+        "src_prog": "DEC SWP XOR SWP ADD JNZ SWP DEC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 12,
+        "src_prog_idx": 603229,
+        "src_prog": "DEC SWP XOR SWP ADD JNZ INC SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 13,
+        "src_prog_idx": 136669,
+        "src_prog": "DEC SWP XOR SWP ADD JNZ SWP INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 14,
+        "src_prog_idx": 600768,
+        "src_prog": "INC INC SWP ADD DEC JNZ INC SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 15,
+        "src_prog_idx": 134208,
+        "src_prog": "INC INC SWP ADD DEC JNZ SWP INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 16,
+        "src_prog_idx": 603087,
+        "src_prog": "ADD SWP INC SWP ADD JNZ INC SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 17,
+        "src_prog_idx": 136527,
+        "src_prog": "ADD SWP INC SWP ADD JNZ SWP INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 19,
+        "src_prog_idx": 1210045,
+        "src_prog": "DEC SWP INC XOR ADD JNZ DEC XOR",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 20,
+        "src_prog_idx": 796488,
+        "src_prog": "INC XOR SWP ADD SWP INC JNZ SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      }
+    ]
+  },
+  {
+    "source": "A",
+    "target": "G",
+    "src_reachable": 177,
+    "tgt_reachable": 37,
+    "translatable": 34,
+    "untranslatable": 143,
+    "sample": [
+      {
+        "output": 0,
+        "src_prog_idx": 259,
+        "src_prog": "DEC DEC DEC DEC INC INC INC INC",
+        "tgt_prog_idx": 20136,
+        "tgt_prog": "INC MOV SHR SUB SUB MOV INC INC"
+      },
+      {
+        "output": 1,
+        "src_prog_idx": 260,
+        "src_prog": "SWP DEC DEC DEC INC INC INC INC",
+        "tgt_prog_idx": 4584,
+        "tgt_prog": "INC MOV SHR SUB SUB INC INC INC"
+      },
+      {
+        "output": 2,
+        "src_prog_idx": 43,
+        "src_prog": "DEC DEC DEC INC INC INC INC INC",
+        "tgt_prog_idx": 3288,
+        "tgt_prog": "INC MOV SHR SUB MOV INC INC INC"
+      },
+      {
+        "output": 3,
+        "src_prog_idx": 44,
+        "src_prog": "SWP DEC DEC INC INC INC INC INC",
+        "tgt_prog_idx": 696,
+        "tgt_prog": "INC MOV SHR SUB INC INC INC INC"
+      },
+      {
+        "output": 4,
+        "src_prog_idx": 7,
+        "src_prog": "DEC DEC INC INC INC INC INC INC",
+        "tgt_prog_idx": 222,
+        "tgt_prog": "INC SHR INC SHR INC INC INC INC"
+      },
+      {
+        "output": 5,
+        "src_prog_idx": 8,
+        "src_prog": "SWP DEC INC INC INC INC INC INC",
+        "tgt_prog_idx": 37,
+        "tgt_prog": "SHR INC SHR INC INC INC INC INC"
+      },
+      {
+        "output": 6,
+        "src_prog_idx": 1,
+        "src_prog": "DEC INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 6,
+        "tgt_prog": "INC SHR INC INC INC INC INC INC"
+      },
+      {
+        "output": 7,
+        "src_prog_idx": 2,
+        "src_prog": "SWP INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 1,
+        "tgt_prog": "SHR INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 8,
+        "src_prog_idx": 0,
+        "src_prog": "INC INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 0,
+        "tgt_prog": "INC INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 9,
+        "src_prog_idx": 100728,
+        "src_prog": "INC INC SWP XOR JNZ INC SWP INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 10,
+        "src_prog_idx": 22968,
+        "src_prog": "INC INC SWP XOR JNZ SWP INC INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 11,
+        "src_prog_idx": 416605,
+        "src_prog": "DEC SWP XOR SWP ADD JNZ SWP DEC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 12,
+        "src_prog_idx": 603229,
+        "src_prog": "DEC SWP XOR SWP ADD JNZ INC SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 13,
+        "src_prog_idx": 136669,
+        "src_prog": "DEC SWP XOR SWP ADD JNZ SWP INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 14,
+        "src_prog_idx": 600768,
+        "src_prog": "INC INC SWP ADD DEC JNZ INC SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 15,
+        "src_prog_idx": 134208,
+        "src_prog": "INC INC SWP ADD DEC JNZ SWP INC",
+        "tgt_prog_idx": 336360,
+        "tgt_prog": "INC MOV SHR SUB SHR SHR SHR SHR"
+      },
+      {
+        "output": 16,
+        "src_prog_idx": 603087,
+        "src_prog": "ADD SWP INC SWP ADD JNZ INC SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 17,
+        "src_prog_idx": 136527,
+        "src_prog": "ADD SWP INC SWP ADD JNZ SWP INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 19,
+        "src_prog_idx": 1210045,
+        "src_prog": "DEC SWP INC XOR ADD JNZ DEC XOR",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 20,
+        "src_prog_idx": 796488,
+        "src_prog": "INC XOR SWP ADD SWP INC JNZ SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      }
+    ]
+  },
+  {
+    "source": "B",
+    "target": "A",
+    "src_reachable": 21,
+    "tgt_reachable": 177,
+    "translatable": 21,
+    "untranslatable": 0,
+    "sample": [
+      {
+        "output": 0,
+        "src_prog_idx": 1297,
+        "src_prog": "NEG INC INC INC NEG INC INC INC",
+        "tgt_prog_idx": 259,
+        "tgt_prog": "DEC DEC DEC DEC INC INC INC INC"
+      },
+      {
+        "output": 1,
+        "src_prog_idx": 216,
+        "src_prog": "INC INC INC NEG INC INC INC INC",
+        "tgt_prog_idx": 260,
+        "tgt_prog": "SWP DEC DEC DEC INC INC INC INC"
+      },
+      {
+        "output": 2,
+        "src_prog_idx": 217,
+        "src_prog": "NEG INC INC NEG INC INC INC INC",
+        "tgt_prog_idx": 43,
+        "tgt_prog": "DEC DEC DEC INC INC INC INC INC"
+      },
+      {
+        "output": 3,
+        "src_prog_idx": 36,
+        "src_prog": "INC INC NEG INC INC INC INC INC",
+        "tgt_prog_idx": 44,
+        "tgt_prog": "SWP DEC DEC INC INC INC INC INC"
+      },
+      {
+        "output": 4,
+        "src_prog_idx": 37,
+        "src_prog": "NEG INC NEG INC INC INC INC INC",
+        "tgt_prog_idx": 7,
+        "tgt_prog": "DEC DEC INC INC INC INC INC INC"
+      },
+      {
+        "output": 5,
+        "src_prog_idx": 6,
+        "src_prog": "INC NEG INC INC INC INC INC INC",
+        "tgt_prog_idx": 8,
+        "tgt_prog": "SWP DEC INC INC INC INC INC INC"
+      },
+      {
+        "output": 6,
+        "src_prog_idx": 7,
+        "src_prog": "NEG NEG INC INC INC INC INC INC",
+        "tgt_prog_idx": 1,
+        "tgt_prog": "DEC INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 7,
+        "src_prog_idx": 1,
+        "src_prog": "NEG INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 2,
+        "tgt_prog": "SWP INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 8,
+        "src_prog_idx": 0,
+        "src_prog": "INC INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 0,
+        "tgt_prog": "INC INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 9,
+        "src_prog_idx": 444960,
+        "src_prog": "INC INC INC MOV NEG SUB SUB NEG",
+        "tgt_prog_idx": 100728,
+        "tgt_prog": "INC INC SWP XOR JNZ INC SWP INC"
+      },
+      {
+        "output": 244,
+        "src_prog_idx": 990144,
+        "src_prog": "INC INC INC INC MOV NEG SUB SUB",
+        "tgt_prog_idx": 134431,
+        "tgt_prog": "DEC DEC SWP XOR DEC JNZ SWP INC"
+      },
+      {
+        "output": 246,
+        "src_prog_idx": 902016,
+        "src_prog": "INC INC INC INC INC MOV NEG SUB",
+        "tgt_prog_idx": 348892,
+        "tgt_prog": "XOR SWP DEC DEC JNZ SWP DEC DEC"
+      },
+      {
+        "output": 247,
+        "src_prog_idx": 724896,
+        "src_prog": "INC INC INC MOV NEG SUB SUB MOV",
+        "tgt_prog_idx": 379996,
+        "tgt_prog": "XOR SWP DEC DEC JNZ INC SWP DEC"
+      },
+      {
+        "output": 248,
+        "src_prog_idx": 165024,
+        "src_prog": "INC INC INC MOV NEG SUB SUB INC",
+        "tgt_prog_idx": 68956,
+        "tgt_prog": "XOR SWP DEC DEC JNZ SWP DEC INC"
+      },
+      {
+        "output": 249,
+        "src_prog_idx": 150336,
+        "src_prog": "INC INC INC INC MOV NEG SUB INC",
+        "tgt_prog_idx": 100060,
+        "tgt_prog": "XOR SWP DEC DEC JNZ INC SWP INC"
+      },
+      {
+        "output": 250,
+        "src_prog_idx": 148176,
+        "src_prog": "INC INC INC MOV INC NEG SUB INC",
+        "tgt_prog_idx": 22300,
+        "tgt_prog": "XOR SWP DEC DEC JNZ SWP INC INC"
+      },
+      {
+        "output": 251,
+        "src_prog_idx": 46656,
+        "src_prog": "INC INC INC INC INC INC NEG INC",
+        "tgt_prog_idx": 55988,
+        "tgt_prog": "SWP DEC DEC DEC DEC DEC DEC INC"
+      },
+      {
+        "output": 252,
+        "src_prog_idx": 25056,
+        "src_prog": "INC INC INC MOV NEG SUB INC INC",
+        "tgt_prog_idx": 9331,
+        "tgt_prog": "DEC DEC DEC DEC DEC DEC INC INC"
+      },
+      {
+        "output": 253,
+        "src_prog_idx": 7776,
+        "src_prog": "INC INC INC INC INC NEG INC INC",
+        "tgt_prog_idx": 9332,
+        "tgt_prog": "SWP DEC DEC DEC DEC DEC INC INC"
+      },
+      {
+        "output": 254,
+        "src_prog_idx": 7777,
+        "src_prog": "NEG INC INC INC INC NEG INC INC",
+        "tgt_prog_idx": 1555,
+        "tgt_prog": "DEC DEC DEC DEC DEC INC INC INC"
+      }
+    ]
+  },
+  {
+    "source": "G",
+    "target": "A",
+    "src_reachable": 37,
+    "tgt_reachable": 177,
+    "translatable": 34,
+    "untranslatable": 3,
+    "sample": [
+      {
+        "output": 0,
+        "src_prog_idx": 20136,
+        "src_prog": "INC MOV SHR SUB SUB MOV INC INC",
+        "tgt_prog_idx": 259,
+        "tgt_prog": "DEC DEC DEC DEC INC INC INC INC"
+      },
+      {
+        "output": 1,
+        "src_prog_idx": 4584,
+        "src_prog": "INC MOV SHR SUB SUB INC INC INC",
+        "tgt_prog_idx": 260,
+        "tgt_prog": "SWP DEC DEC DEC INC INC INC INC"
+      },
+      {
+        "output": 2,
+        "src_prog_idx": 3288,
+        "src_prog": "INC MOV SHR SUB MOV INC INC INC",
+        "tgt_prog_idx": 43,
+        "tgt_prog": "DEC DEC DEC INC INC INC INC INC"
+      },
+      {
+        "output": 3,
+        "src_prog_idx": 696,
+        "src_prog": "INC MOV SHR SUB INC INC INC INC",
+        "tgt_prog_idx": 44,
+        "tgt_prog": "SWP DEC DEC INC INC INC INC INC"
+      },
+      {
+        "output": 4,
+        "src_prog_idx": 222,
+        "src_prog": "INC SHR INC SHR INC INC INC INC",
+        "tgt_prog_idx": 7,
+        "tgt_prog": "DEC DEC INC INC INC INC INC INC"
+      },
+      {
+        "output": 5,
+        "src_prog_idx": 37,
+        "src_prog": "SHR INC SHR INC INC INC INC INC",
+        "tgt_prog_idx": 8,
+        "tgt_prog": "SWP DEC INC INC INC INC INC INC"
+      },
+      {
+        "output": 6,
+        "src_prog_idx": 6,
+        "src_prog": "INC SHR INC INC INC INC INC INC",
+        "tgt_prog_idx": 1,
+        "tgt_prog": "DEC INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 7,
+        "src_prog_idx": 1,
+        "src_prog": "SHR INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 2,
+        "tgt_prog": "SWP INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 8,
+        "src_prog_idx": 0,
+        "src_prog": "INC INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 0,
+        "tgt_prog": "INC INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 15,
+        "src_prog_idx": 336360,
+        "src_prog": "INC MOV SHR SUB SHR SHR SHR SHR",
+        "tgt_prog_idx": 134208,
+        "tgt_prog": "INC INC SWP ADD DEC JNZ SWP INC"
+      },
+      {
+        "output": 30,
+        "src_prog_idx": 896232,
+        "src_prog": "INC MOV SHR SUB SHR SHR SHR SUB",
+        "tgt_prog_idx": 795843,
+        "tgt_prog": "ADD XOR SWP INC SWP INC JNZ SWP"
+      },
+      {
+        "output": 31,
+        "src_prog_idx": 337656,
+        "src_prog": "INC MOV SHR SUB MOV SHR SHR SHR",
+        "tgt_prog_idx": 412690,
+        "tgt_prog": "XOR ADD ADD SWP INC JNZ SWP DEC"
+      },
+      {
+        "output": 32,
+        "src_prog_idx": 56424,
+        "src_prog": "INC MOV SHR SUB SHR SHR SHR INC",
+        "tgt_prog_idx": 599314,
+        "tgt_prog": "XOR ADD ADD SWP INC JNZ INC SWP"
+      },
+      {
+        "output": 61,
+        "src_prog_idx": 898416,
+        "src_prog": "INC INC MOV SHR SUB SHR SHR SUB",
+        "tgt_prog_idx": 132916,
+        "tgt_prog": "XOR INC SWP ADD INC JNZ SWP INC"
+      },
+      {
+        "output": 62,
+        "src_prog_idx": 431856,
+        "src_prog": "INC INC MOV SHR SUB SHR SUB SHR",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 63,
+        "src_prog_idx": 149736,
+        "src_prog": "INC MOV SHR SUB SHR SHR SUB INC",
+        "tgt_prog_idx": 416452,
+        "tgt_prog": "XOR INC INC SWP ADD JNZ SWP DEC"
+      },
+      {
+        "output": 64,
+        "src_prog_idx": 57720,
+        "src_prog": "INC MOV SHR SUB MOV SHR SHR INC",
+        "tgt_prog_idx": 603076,
+        "tgt_prog": "XOR INC INC SWP ADD JNZ INC SWP"
+      },
+      {
+        "output": 65,
+        "src_prog_idx": 9768,
+        "src_prog": "INC MOV SHR SUB SHR SHR INC INC",
+        "tgt_prog_idx": 136516,
+        "tgt_prog": "XOR INC INC SWP ADD JNZ SWP INC"
+      },
+      {
+        "output": 123,
+        "src_prog_idx": 914112,
+        "src_prog": "INC INC INC MOV SUB SUB SHR SUB",
+        "tgt_prog_idx": 412874,
+        "tgt_prog": "SWP XOR SWP ADD INC JNZ SWP DEC"
+      },
+      {
+        "output": 124,
+        "src_prog_idx": 911520,
+        "src_prog": "INC INC INC MOV SHR SUB SHR SUB",
+        "tgt_prog_idx": 599498,
+        "tgt_prog": "SWP XOR SWP ADD INC JNZ INC SWP"
+      }
+    ]
+  },
+  {
+    "source": "A",
+    "target": "MAX",
+    "src_reachable": 177,
+    "tgt_reachable": 9,
+    "translatable": 9,
+    "untranslatable": 168,
+    "sample": [
+      {
+        "output": 0,
+        "src_prog_idx": 259,
+        "src_prog": "DEC DEC DEC DEC INC INC INC INC",
+        "tgt_prog_idx": 279936,
+        "tgt_prog": "INC INC INC INC INC INC INC AND"
+      },
+      {
+        "output": 1,
+        "src_prog_idx": 260,
+        "src_prog": "SWP DEC DEC DEC INC INC INC INC",
+        "tgt_prog_idx": 46656,
+        "tgt_prog": "INC INC INC INC INC INC AND INC"
+      },
+      {
+        "output": 2,
+        "src_prog_idx": 43,
+        "src_prog": "DEC DEC DEC INC INC INC INC INC",
+        "tgt_prog_idx": 7776,
+        "tgt_prog": "INC INC INC INC INC AND INC INC"
+      },
+      {
+        "output": 3,
+        "src_prog_idx": 44,
+        "src_prog": "SWP DEC DEC INC INC INC INC INC",
+        "tgt_prog_idx": 1296,
+        "tgt_prog": "INC INC INC INC AND INC INC INC"
+      },
+      {
+        "output": 4,
+        "src_prog_idx": 7,
+        "src_prog": "DEC DEC INC INC INC INC INC INC",
+        "tgt_prog_idx": 216,
+        "tgt_prog": "INC INC INC AND INC INC INC INC"
+      },
+      {
+        "output": 5,
+        "src_prog_idx": 8,
+        "src_prog": "SWP DEC INC INC INC INC INC INC",
+        "tgt_prog_idx": 36,
+        "tgt_prog": "INC INC AND INC INC INC INC INC"
+      },
+      {
+        "output": 6,
+        "src_prog_idx": 1,
+        "src_prog": "DEC INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 6,
+        "tgt_prog": "INC AND INC INC INC INC INC INC"
+      },
+      {
+        "output": 7,
+        "src_prog_idx": 2,
+        "src_prog": "SWP INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 1,
+        "tgt_prog": "AND INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 8,
+        "src_prog_idx": 0,
+        "src_prog": "INC INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 0,
+        "tgt_prog": "INC INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 9,
+        "src_prog_idx": 100728,
+        "src_prog": "INC INC SWP XOR JNZ INC SWP INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 10,
+        "src_prog_idx": 22968,
+        "src_prog": "INC INC SWP XOR JNZ SWP INC INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 11,
+        "src_prog_idx": 416605,
+        "src_prog": "DEC SWP XOR SWP ADD JNZ SWP DEC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 12,
+        "src_prog_idx": 603229,
+        "src_prog": "DEC SWP XOR SWP ADD JNZ INC SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 13,
+        "src_prog_idx": 136669,
+        "src_prog": "DEC SWP XOR SWP ADD JNZ SWP INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 14,
+        "src_prog_idx": 600768,
+        "src_prog": "INC INC SWP ADD DEC JNZ INC SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 15,
+        "src_prog_idx": 134208,
+        "src_prog": "INC INC SWP ADD DEC JNZ SWP INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 16,
+        "src_prog_idx": 603087,
+        "src_prog": "ADD SWP INC SWP ADD JNZ INC SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 17,
+        "src_prog_idx": 136527,
+        "src_prog": "ADD SWP INC SWP ADD JNZ SWP INC",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 19,
+        "src_prog_idx": 1210045,
+        "src_prog": "DEC SWP INC XOR ADD JNZ DEC XOR",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      },
+      {
+        "output": 20,
+        "src_prog_idx": 796488,
+        "src_prog": "INC XOR SWP ADD SWP INC JNZ SWP",
+        "tgt_prog_idx": -1,
+        "tgt_prog": "UNREACHABLE"
+      }
+    ]
+  },
+  {
+    "source": "MAX",
+    "target": "A",
+    "src_reachable": 9,
+    "tgt_reachable": 177,
+    "translatable": 9,
+    "untranslatable": 0,
+    "sample": [
+      {
+        "output": 0,
+        "src_prog_idx": 279936,
+        "src_prog": "INC INC INC INC INC INC INC AND",
+        "tgt_prog_idx": 259,
+        "tgt_prog": "DEC DEC DEC DEC INC INC INC INC"
+      },
+      {
+        "output": 1,
+        "src_prog_idx": 46656,
+        "src_prog": "INC INC INC INC INC INC AND INC",
+        "tgt_prog_idx": 260,
+        "tgt_prog": "SWP DEC DEC DEC INC INC INC INC"
+      },
+      {
+        "output": 2,
+        "src_prog_idx": 7776,
+        "src_prog": "INC INC INC INC INC AND INC INC",
+        "tgt_prog_idx": 43,
+        "tgt_prog": "DEC DEC DEC INC INC INC INC INC"
+      },
+      {
+        "output": 3,
+        "src_prog_idx": 1296,
+        "src_prog": "INC INC INC INC AND INC INC INC",
+        "tgt_prog_idx": 44,
+        "tgt_prog": "SWP DEC DEC INC INC INC INC INC"
+      },
+      {
+        "output": 4,
+        "src_prog_idx": 216,
+        "src_prog": "INC INC INC AND INC INC INC INC",
+        "tgt_prog_idx": 7,
+        "tgt_prog": "DEC DEC INC INC INC INC INC INC"
+      },
+      {
+        "output": 5,
+        "src_prog_idx": 36,
+        "src_prog": "INC INC AND INC INC INC INC INC",
+        "tgt_prog_idx": 8,
+        "tgt_prog": "SWP DEC INC INC INC INC INC INC"
+      },
+      {
+        "output": 6,
+        "src_prog_idx": 6,
+        "src_prog": "INC AND INC INC INC INC INC INC",
+        "tgt_prog_idx": 1,
+        "tgt_prog": "DEC INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 7,
+        "src_prog_idx": 1,
+        "src_prog": "AND INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 2,
+        "tgt_prog": "SWP INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 8,
+        "src_prog_idx": 0,
+        "src_prog": "INC INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 0,
+        "tgt_prog": "INC INC INC INC INC INC INC INC"
+      }
+    ]
+  },
+  {
+    "source": "MIN",
+    "target": "A",
+    "src_reachable": 9,
+    "tgt_reachable": 177,
+    "translatable": 9,
+    "untranslatable": 0,
+    "sample": [
+      {
+        "output": 0,
+        "src_prog_idx": 1679615,
+        "src_prog": "JNZ JNZ JNZ JNZ JNZ JNZ JNZ JNZ",
+        "tgt_prog_idx": 259,
+        "tgt_prog": "DEC DEC DEC DEC INC INC INC INC"
+      },
+      {
+        "output": 1,
+        "src_prog_idx": 279935,
+        "src_prog": "JNZ JNZ JNZ JNZ JNZ JNZ JNZ INC",
+        "tgt_prog_idx": 260,
+        "tgt_prog": "SWP DEC DEC DEC INC INC INC INC"
+      },
+      {
+        "output": 2,
+        "src_prog_idx": 46655,
+        "src_prog": "JNZ JNZ JNZ JNZ JNZ JNZ INC INC",
+        "tgt_prog_idx": 43,
+        "tgt_prog": "DEC DEC DEC INC INC INC INC INC"
+      },
+      {
+        "output": 3,
+        "src_prog_idx": 7775,
+        "src_prog": "JNZ JNZ JNZ JNZ JNZ INC INC INC",
+        "tgt_prog_idx": 44,
+        "tgt_prog": "SWP DEC DEC INC INC INC INC INC"
+      },
+      {
+        "output": 4,
+        "src_prog_idx": 1295,
+        "src_prog": "JNZ JNZ JNZ JNZ INC INC INC INC",
+        "tgt_prog_idx": 7,
+        "tgt_prog": "DEC DEC INC INC INC INC INC INC"
+      },
+      {
+        "output": 5,
+        "src_prog_idx": 215,
+        "src_prog": "JNZ JNZ JNZ INC INC INC INC INC",
+        "tgt_prog_idx": 8,
+        "tgt_prog": "SWP DEC INC INC INC INC INC INC"
+      },
+      {
+        "output": 6,
+        "src_prog_idx": 35,
+        "src_prog": "JNZ JNZ INC INC INC INC INC INC",
+        "tgt_prog_idx": 1,
+        "tgt_prog": "DEC INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 7,
+        "src_prog_idx": 5,
+        "src_prog": "JNZ INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 2,
+        "tgt_prog": "SWP INC INC INC INC INC INC INC"
+      },
+      {
+        "output": 8,
+        "src_prog_idx": 0,
+        "src_prog": "INC INC INC INC INC INC INC INC",
+        "tgt_prog_idx": 0,
+        "tgt_prog": "INC INC INC INC INC INC INC INC"
+      }
+    ]
+  }
+]

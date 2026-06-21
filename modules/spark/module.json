@@ -1,0 +1,60 @@
+{
+  "name": "spark",
+  "top_module": "spark",
+  "description": "SPARK: Simple Perceptron with Activation and Responsive Kernel \u2014 8-input single-layer perceptron",
+  "resources": {
+    "luts": 335,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000-0x01C",
+      "name": "INPUT[0..7]",
+      "access": "w",
+      "desc": "signed 8-bit inputs"
+    },
+    {
+      "offset": "0x020-0x03C",
+      "name": "WEIGHT[0..7]",
+      "access": "w",
+      "desc": "signed 8-bit weights"
+    },
+    {
+      "offset": "0x040",
+      "name": "BIAS",
+      "access": "w",
+      "desc": "signed 16-bit bias"
+    },
+    {
+      "offset": "0x044",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = compute, bit 1 = reset"
+    },
+    {
+      "offset": "0x048",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = done"
+    },
+    {
+      "offset": "0x04C",
+      "name": "SUM",
+      "access": "r",
+      "desc": "signed 32-bit weighted sum + bias"
+    },
+    {
+      "offset": "0x050",
+      "name": "OUTPUT",
+      "access": "r",
+      "desc": "0 or 1 (step activation)"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "scry",
+  "version": "0.1.0",
+  "description": "SCRY: Silicon Capture for Runtime introspectY. Circular trace buffer.",
+  "resources": {
+    "luts": 76,
+    "brams": 2,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset",
+      "snoop"
+    ],
+    "provides": [
+      "trace_buffer"
+    ]
+  },
+  "top_module": "scry",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "total captured transactions (saturates at 256)"
+    },
+    {
+      "offset": "0x004",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = enable, bit 1 = clear"
+    },
+    {
+      "offset": "0x008",
+      "name": "WRITE_PTR",
+      "access": "r",
+      "desc": "current write index (0-255)"
+    },
+    {
+      "offset": "0x400-0x7FF",
+      "name": "TRACE[0..255]",
+      "access": "r",
+      "desc": "captured addresses, oldest first"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "coproc1",
+  "version": "0.1.0",
+  "description": "COPROC1: RIME-I coprocessor instance 1",
+  "resources": {
+    "luts": 5976,
+    "brams": 4,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "coprocessor"
+    ]
+  },
+  "top_module": "coproc1",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = start, bit 1 = halt, bit 2 = reset"
+    },
+    {
+      "offset": "0x004",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = running, bit 1 = halted, [7:4] = state"
+    },
+    {
+      "offset": "0x008",
+      "name": "PC",
+      "access": "r",
+      "desc": "coprocessor program counter"
+    },
+    {
+      "offset": "0x00C",
+      "name": "RESULT",
+      "access": "r",
+      "desc": "coprocessor reg[10] (a0 return value)"
+    },
+    {
+      "offset": "0x010",
+      "name": "CYCLES",
+      "access": "r",
+      "desc": "cycle counter since last start"
+    },
+    {
+      "offset": "0x014",
+      "name": "MAILBOX_TX",
+      "access": "w",
+      "desc": "write data to coprocessor's RX mailbox"
+    },
+    {
+      "offset": "0x018",
+      "name": "MAILBOX_RX",
+      "access": "r",
+      "desc": "read data from coprocessor's TX mailbox"
+    },
+    {
+      "offset": "0x01C",
+      "name": "MAILBOX_ST",
+      "access": "r",
+      "desc": "bit 0 = TX has data, bit 1 = RX has data"
+    },
+    {
+      "offset": "0x400-0xFFF",
+      "name": "BRAM",
+      "access": "w",
+      "desc": "load firmware words (addr = (offset-0x400)/4)"
+    }
+  ]
+}

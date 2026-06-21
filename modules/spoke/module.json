@@ -1,0 +1,66 @@
+{
+  "name": "spoke",
+  "top_module": "spoke",
+  "description": "SPOKE: Serial Peripheral Output/Kernel Exchange \u2014 software-driven 8-bit SPI master with internal loopback (no external pins; compositor register bus only)",
+  "resources": {
+    "luts": 105,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "TX_DATA",
+      "access": "w",
+      "desc": "8-bit byte to send, triggers transaction"
+    },
+    {
+      "offset": "0x004",
+      "name": "RX_DATA",
+      "access": "r",
+      "desc": "8-bit byte received from slave"
+    },
+    {
+      "offset": "0x008",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = busy, bit 1 = done"
+    },
+    {
+      "offset": "0x00C",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = CS_low (assert), bit 1 = reset"
+    },
+    {
+      "offset": "0x010",
+      "name": "DIV",
+      "access": "w",
+      "desc": "16-bit clock divider"
+    },
+    {
+      "offset": "0x014",
+      "name": "LOOPBACK",
+      "access": "w",
+      "desc": "8-bit value the simulated slave returns"
+    },
+    {
+      "offset": "0x018",
+      "name": "CS_OUT",
+      "access": "r",
+      "desc": "current CS output state"
+    },
+    {
+      "offset": "0x01C",
+      "name": "CLK_CNT",
+      "access": "r",
+      "desc": "debug bit count"
+    }
+  ]
+}

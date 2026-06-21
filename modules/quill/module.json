@@ -1,0 +1,59 @@
+{
+  "name": "quill",
+  "version": "0.1.0",
+  "description": "QUILL: 4-channel virtual UART multiplexer.",
+  "resources": {
+    "luts": 133,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "uart_mux"
+    ]
+  },
+  "top_module": "quill",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "TX_DATA",
+      "access": "w",
+      "desc": "push byte to selected channel"
+    },
+    {
+      "offset": "0x004",
+      "name": "CHANNEL",
+      "access": "w",
+      "desc": "select channel (0-3)"
+    },
+    {
+      "offset": "0x008",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bits [3:0] = per-channel has-data"
+    },
+    {
+      "offset": "0x00C",
+      "name": "RX_DATA",
+      "access": "r",
+      "desc": "pop oldest byte from selected channel"
+    },
+    {
+      "offset": "0x010",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "byte count of selected channel"
+    },
+    {
+      "offset": "0x014",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = clear all"
+    }
+  ]
+}

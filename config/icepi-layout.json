@@ -1,0 +1,86 @@
+{
+  "format_version": 1,
+  "flash_size": "0x01000000",
+  "default_slot": "boot",
+  "bundle_block_size": 512,
+  "sdram": {
+    "total_bytes": 33554432,
+    "word_width": 16,
+    "rime_reserved": {
+      "start_word": "0x000000",
+      "end_word": "0x27FFFF",
+      "bytes": 5242880,
+      "description": "5 MB reserved for RIME staging, verification, and overhead."
+    },
+    "application": {
+      "start_word": "0x280000",
+      "end_word": "0xFFFFFF",
+      "bytes": 28311552,
+      "description": "27 MB available to application firmware."
+    }
+  },
+  "aliases": {
+    "resident": "boot",
+    "supervisor": "boot",
+    "runtime": "boot",
+    "recovery": "backup",
+    "app": "backup",
+    "archive": "staging"
+  },
+  "slots": {
+    "boot": {
+      "offset": "0x000000",
+      "size": "0x00100000",
+      "bootable": true,
+      "writable": true,
+      "aliases": [
+        "primary"
+      ],
+      "tags": [
+        "bootstrap"
+      ],
+      "description": "Current boot image at flash base. Use for bootstrap, recovery, and the present resident update path."
+    },
+    "backup": {
+      "offset": "0x00100000",
+      "size": "0x00100000",
+      "bootable": false,
+      "writable": true,
+      "aliases": [
+        "slot-a",
+        "app-a"
+      ],
+      "tags": [
+        "future-runtime"
+      ],
+      "description": "Reserved for a future app/runtime image once a stable supervisor controls reload policy."
+    },
+    "staging": {
+      "offset": "0x00200000",
+      "size": "0x00100000",
+      "bootable": false,
+      "writable": true,
+      "aliases": [
+        "slot-b",
+        "app-b"
+      ],
+      "tags": [
+        "future-runtime"
+      ],
+      "description": "Secondary staging slot for future A/B or SD-assisted recovery flows."
+    },
+    "scratch": {
+      "offset": "0x00300000",
+      "size": "0x00D00000",
+      "bootable": false,
+      "writable": true,
+      "aliases": [
+        "data"
+      ],
+      "tags": [
+        "storage"
+      ],
+      "description": "General flash space reserved for manifests, experiments, and non-boot assets."
+    }
+  }
+}

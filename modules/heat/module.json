@@ -1,0 +1,44 @@
+{
+  "name": "heat",
+  "top_module": "heat",
+  "description": "Hardware Execution Activity Tracker \u2014 256-page memory access heatmap via snoop",
+  "resources": {
+    "luts": 601,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": [
+      "snoop"
+    ]
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = enable, bit 1 = clear, bit 2 = freeze"
+    },
+    {
+      "offset": "0x004",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = enabled, bit 1 = any counter saturated"
+    },
+    {
+      "offset": "0x008",
+      "name": "TOTAL",
+      "access": "r",
+      "desc": "32-bit total transactions since last clear"
+    },
+    {
+      "offset": "0x040-0x07C",
+      "name": "PAGE[0..15]",
+      "access": "r",
+      "desc": "8-bit access count per page region"
+    }
+  ]
+}

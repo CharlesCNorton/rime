@@ -1,0 +1,74 @@
+{
+  "name": "trap",
+  "top_module": "trap",
+  "description": "TRAP: Triggered Response to Address Predicate \u2014 4-address hardware breakpoint/watchpoint unit",
+  "resources": {
+    "luts": 383,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": [
+      "snoop"
+    ]
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "MATCH0",
+      "access": "w",
+      "desc": "32-bit match address 0"
+    },
+    {
+      "offset": "0x004",
+      "name": "MATCH1",
+      "access": "w",
+      "desc": "32-bit match address 1"
+    },
+    {
+      "offset": "0x008",
+      "name": "MATCH2",
+      "access": "w",
+      "desc": "32-bit match address 2"
+    },
+    {
+      "offset": "0x00C",
+      "name": "MATCH3",
+      "access": "w",
+      "desc": "32-bit match address 3"
+    },
+    {
+      "offset": "0x010",
+      "name": "ENABLE",
+      "access": "w",
+      "desc": "bits [3:0] = per-breakpoint enable"
+    },
+    {
+      "offset": "0x014",
+      "name": "FLAGS",
+      "access": "r",
+      "desc": "bits [3:0] = which breakpoints fired (sticky, clear on read)"
+    },
+    {
+      "offset": "0x018",
+      "name": "LAST",
+      "access": "r",
+      "desc": "address of last match"
+    },
+    {
+      "offset": "0x01C",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "total match count since last reset"
+    },
+    {
+      "offset": "0x020",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset flags/count"
+    }
+  ]
+}

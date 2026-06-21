@@ -1,0 +1,54 @@
+{
+  "name": "pylon",
+  "top_module": "pylon",
+  "description": "PYLON: Paired Yield-Linked Output Node \u2014 8-deep \u00d7 32-bit FIFO mailbox between two software-driven ports",
+  "resources": {
+    "luts": 107,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "PUSH",
+      "access": "w",
+      "desc": "enqueue 32-bit word"
+    },
+    {
+      "offset": "0x004",
+      "name": "POP",
+      "access": "r",
+      "desc": "dequeue 32-bit word (returns 0 if empty)"
+    },
+    {
+      "offset": "0x008",
+      "name": "PEEK",
+      "access": "r",
+      "desc": "read head without removing"
+    },
+    {
+      "offset": "0x00C",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = empty, bit 1 = full, bit 2 = overflow latched"
+    },
+    {
+      "offset": "0x010",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "current FIFO occupancy"
+    },
+    {
+      "offset": "0x014",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = clear, bit 1 = clear overflow flag"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "vigil",
+  "version": "0.1.0",
+  "description": "VIGIL: Hamming(7,4) ECC encoder/decoder with error correction.",
+  "resources": {
+    "luts": 97,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "ecc"
+    ]
+  },
+  "top_module": "vigil",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "ENCODE",
+      "access": "w",
+      "desc": "4-bit data [3:0] \u2192 7-bit codeword"
+    },
+    {
+      "offset": "0x004",
+      "name": "CODED",
+      "access": "r",
+      "desc": "last encoded codeword"
+    },
+    {
+      "offset": "0x008",
+      "name": "DECODE",
+      "access": "w",
+      "desc": "7-bit codeword [6:0] \u2192 decode+correct"
+    },
+    {
+      "offset": "0x00C",
+      "name": "DATA",
+      "access": "r",
+      "desc": "decoded 4 data bits"
+    },
+    {
+      "offset": "0x010",
+      "name": "SYNDROME",
+      "access": "r",
+      "desc": "syndrome (0=no error, 1-7=error position)"
+    },
+    {
+      "offset": "0x014",
+      "name": "CORRECTED",
+      "access": "r",
+      "desc": "1 if correction applied"
+    },
+    {
+      "offset": "0x018",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset error counter"
+    },
+    {
+      "offset": "0x01C",
+      "name": "ERRORS",
+      "access": "r",
+      "desc": "total corrected errors"
+    }
+  ]
+}

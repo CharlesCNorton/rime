@@ -1,0 +1,71 @@
+{
+  "name": "hedge",
+  "version": "0.1.0",
+  "description": "HEDGE: hardware token bucket rate limiter.",
+  "resources": {
+    "luts": 218,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "rate_limiter"
+    ]
+  },
+  "top_module": "hedge",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "REQUEST",
+      "access": "w",
+      "desc": "consume one token, read RESULT after"
+    },
+    {
+      "offset": "0x004",
+      "name": "RESULT",
+      "access": "r",
+      "desc": "bit 0 = last request allowed (1) or denied (0)"
+    },
+    {
+      "offset": "0x008",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = enable, bit 1 = reset"
+    },
+    {
+      "offset": "0x00C",
+      "name": "RATE",
+      "access": "w",
+      "desc": "tokens added per tick (0-255)"
+    },
+    {
+      "offset": "0x010",
+      "name": "BURST",
+      "access": "w",
+      "desc": "max token bucket depth"
+    },
+    {
+      "offset": "0x014",
+      "name": "TOKENS",
+      "access": "r",
+      "desc": "current token count"
+    },
+    {
+      "offset": "0x018",
+      "name": "ALLOWED",
+      "access": "r",
+      "desc": "total allowed requests since reset"
+    },
+    {
+      "offset": "0x01C",
+      "name": "DENIED",
+      "access": "r",
+      "desc": "total denied requests since reset"
+    }
+  ]
+}

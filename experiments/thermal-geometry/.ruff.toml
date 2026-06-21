@@ -1,0 +1,4 @@
+[lint.per-file-ignores]
+"place_*.py" = ["F821"]
+"probe_names.py" = ["F821"]
+"test_place.py" = ["F821"]

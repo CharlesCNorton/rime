@@ -1,0 +1,65 @@
+{
+  "name": "epoch",
+  "version": "0.1.0",
+  "description": "EPOCH: real-time clock synthesizer from sys_clk.",
+  "resources": {
+    "luts": 219,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "rtc"
+    ]
+  },
+  "top_module": "epoch",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "SECONDS",
+      "access": "rw",
+      "desc": "0-59"
+    },
+    {
+      "offset": "0x004",
+      "name": "MINUTES",
+      "access": "rw",
+      "desc": "0-59"
+    },
+    {
+      "offset": "0x008",
+      "name": "HOURS",
+      "access": "rw",
+      "desc": "0-23"
+    },
+    {
+      "offset": "0x00C",
+      "name": "DAYS",
+      "access": "rw",
+      "desc": "0-65535"
+    },
+    {
+      "offset": "0x010",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = enable, bit 1 = reset to 00:00:00"
+    },
+    {
+      "offset": "0x014",
+      "name": "TICKS",
+      "access": "r",
+      "desc": "sub-second tick counter (0-24999999)"
+    },
+    {
+      "offset": "0x018",
+      "name": "UPTIME",
+      "access": "r",
+      "desc": "total seconds since last reset (32-bit)"
+    }
+  ]
+}

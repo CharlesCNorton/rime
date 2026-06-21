@@ -1,0 +1,72 @@
+{
+  "name": "latch",
+  "version": "0.1.0",
+  "description": "LATCH: hardware watchdog timer + event counter.",
+  "resources": {
+    "luts": 261,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "watchdog",
+      "counter"
+    ]
+  },
+  "top_module": "latch",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "KICK",
+      "access": "w",
+      "desc": "any write resets the watchdog countdown"
+    },
+    {
+      "offset": "0x004",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bit 0 = expired, bit 1 = running"
+    },
+    {
+      "offset": "0x008",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = enable watchdog, bit 1 = clear expired, bit 2 = reset counter"
+    },
+    {
+      "offset": "0x00C",
+      "name": "TIMEOUT",
+      "access": "w",
+      "desc": "set watchdog countdown value (in clock cycles / 256)"
+    },
+    {
+      "offset": "0x010",
+      "name": "REMAIN",
+      "access": "r",
+      "desc": "remaining countdown ticks"
+    },
+    {
+      "offset": "0x014",
+      "name": "EVENT",
+      "access": "w",
+      "desc": "increment event counter (any write)"
+    },
+    {
+      "offset": "0x018",
+      "name": "ECOUNT",
+      "access": "r",
+      "desc": "event counter value"
+    },
+    {
+      "offset": "0x01C",
+      "name": "ESTAMP",
+      "access": "r",
+      "desc": "countdown value at last event (timestamp)"
+    }
+  ]
+}

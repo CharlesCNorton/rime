@@ -1,0 +1,53 @@
+{
+  "name": "emberlite",
+  "version": "0.1.0",
+  "description": "EMBER-LITE: minimal ring-oscillator TRNG with Von Neumann debiasing.",
+  "resources": {
+    "luts": 76,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "trng_lite"
+    ]
+  },
+  "top_module": "emberlite",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "RANDOM",
+      "access": "r",
+      "desc": "32-bit collected entropy (changes every 32 debias events)"
+    },
+    {
+      "offset": "0x004",
+      "name": "BYTE",
+      "access": "r",
+      "desc": "low 8 bits of current collection register"
+    },
+    {
+      "offset": "0x008",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset collection state"
+    },
+    {
+      "offset": "0x00C",
+      "name": "COUNT",
+      "access": "r",
+      "desc": "total completed 32-bit words since reset"
+    },
+    {
+      "offset": "0x010",
+      "name": "RAW",
+      "access": "r",
+      "desc": "instantaneous raw ring XOR sample (4 bits, channels 0-3)"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "bloom",
+  "version": "0.1.0",
+  "description": "BLOOM: hardware popcount and bit manipulation accelerator.",
+  "resources": {
+    "luts": 51,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "requires": [
+      "cpu_bus",
+      "clock",
+      "reset"
+    ],
+    "provides": [
+      "bitops"
+    ]
+  },
+  "top_module": "bloom",
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "INPUT",
+      "access": "w",
+      "desc": "32-bit value to analyze"
+    },
+    {
+      "offset": "0x004",
+      "name": "POPCNT",
+      "access": "r",
+      "desc": "number of 1-bits (0-32)"
+    },
+    {
+      "offset": "0x008",
+      "name": "CLZ",
+      "access": "r",
+      "desc": "count of leading zeros (0-32)"
+    },
+    {
+      "offset": "0x00C",
+      "name": "CTZ",
+      "access": "r",
+      "desc": "count of trailing zeros (0-32)"
+    },
+    {
+      "offset": "0x010",
+      "name": "REVERSE",
+      "access": "r",
+      "desc": "bit-reversed value"
+    },
+    {
+      "offset": "0x014",
+      "name": "PARITY",
+      "access": "r",
+      "desc": "XOR of all bits (0 or 1)"
+    }
+  ]
+}

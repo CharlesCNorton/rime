@@ -1,0 +1,54 @@
+{
+  "name": "phase",
+  "top_module": "phase",
+  "description": "PHASE: Periodic Hardware Accumulation and Signal Encoder \u2014 quadrature decoder with position counter",
+  "resources": {
+    "luts": 158,
+    "brams": 0,
+    "multipliers": 0
+  },
+  "interfaces": {
+    "provides": [
+      "register"
+    ],
+    "requires": []
+  },
+  "registers": [
+    {
+      "offset": "0x000",
+      "name": "AB_INPUT",
+      "access": "w",
+      "desc": "bit 0 = A, bit 1 = B (software-driven for testing)"
+    },
+    {
+      "offset": "0x004",
+      "name": "POSITION",
+      "access": "r",
+      "desc": "signed 32-bit position counter"
+    },
+    {
+      "offset": "0x008",
+      "name": "DIRECTION",
+      "access": "r",
+      "desc": "0 = stopped, 1 = forward, 2 = reverse"
+    },
+    {
+      "offset": "0x00C",
+      "name": "EDGES",
+      "access": "r",
+      "desc": "total edge count (unsigned)"
+    },
+    {
+      "offset": "0x010",
+      "name": "CONTROL",
+      "access": "w",
+      "desc": "bit 0 = reset, bit 1 = sample (latch AB and update)"
+    },
+    {
+      "offset": "0x014",
+      "name": "STATUS",
+      "access": "r",
+      "desc": "bits [1:0] = last A,B values"
+    }
+  ]
+}
